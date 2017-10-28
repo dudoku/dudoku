@@ -48,7 +48,7 @@ RUN echo "export GOOGLE_APPLICATION_CREDENTIALS=key.json" >> ~/.bashrc
 #RUN ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib
 
 #RUN pip install PIL --allow-external PIL --allow-unverified PIL
-RUN pip install Pillow
+RUN pip install Pillow shapely
 
 
 VOLUME ["/app"]

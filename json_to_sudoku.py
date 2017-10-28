@@ -13,12 +13,22 @@ class Collider(object):
         self.x2 = x2
         self.y1 = y1
         self.y2 = y2
-        print('collider', x1, y1, x2, y2, ',', self.xMid, self.yMid, ',', self.x1, self.x2, self.y1, self.y2)
 
     def checkCollision(self, col):
-        xCol = (self.x1 >= col.x1 and self.x1 <= col.x2) or (self.x2 >= col.x1 and self.x2 <= col.x2)
-        yCol = (self.y1 >= col.y1 and self.y1 <= col.y2) or (self.y2 >= col.y1 and self.y2 <= col.y2)
-        return xCol and yCol
+        from shapely.geometry import Polygon
+        from shapely.geometry import geo
+        # TODO: Is CCW right?
+        p1 = geo.box(self.x1, self.y1, self.x2, self.y2, ccw=False)
+        p2 = geo.box(col.x1, col.y1, col.x2, col.y2, ccw=False)
+        return p1.intersects(p2)
+        #xCol = (self.x1 >= col.x1 and self.x1 <= col.x2) or (self.x2 >= col.x1 and self.x2 <= col.x2)
+        #yCol = (self.y1 >= col.y1 and self.y1 <= col.y2) or (self.y2 >= col.y1 and self.y2 <= col.y2)
+        #return xCol and yCol
+
+        #return (self.x1 < col.x1 + (col.x1 - col.x2) and
+        #   self.x1 + (self.x1 - self.x2) > col.x1 and
+        #   self.y1 < col.y1 + (col.y1 - col.y2) and
+        #   (self.y1 - self.y2) + self.y1 > col.y1)
 
     def resize(self):
         self.HALF_AVG_SIZE = ((self.x2 - self.x1) + (self.y2 - self.y1)) / 2
@@ -51,21 +61,23 @@ def doOCR(content):
 def findSpacesBetweenHoriz(col1, col2):
     spaces = 0
 
-    yAvg = ((col1.y2 - col1.y1) + (col2.y2 - col2.y1)) / 2 + (col1.y1 + col2.y1) / 2
+    yAvg = (col1.y1 + col2.y2) / 2
     x0Mid = ((col1.x2 - col1.x1) / 2) + col1.x1
-    xDiff = (col2.x2 - col2.x1)
+    xDiff = (col2.x2 - col1.x2)
+
+    print('find', col1.y1, col2.y2, yAvg, x0Mid, xDiff)
 
     # Account for cases of the same column
     print(col2.x1, "<=", x0Mid)
     if (col2.x1 <= x0Mid):
         return -1
 
-    for objs in range(2, 64):
+    for objs in range(2, 8):
         pastCldr = col1
-        xDelta = (xDiff * 1.0) / objs
+        xDelta = xDiff // objs
         for cldrs in range(0, objs):
-            cldr = Collider(x0Mid + (cldrs * xDelta), yAvg, x0Mid + (cldrs + 1 * xDelta), yAvg)
-            if (cldr.checkCollision(pastCldr) or cldr.checkCollision(cldr)):
+            cldr = Collider(x0Mid + (cldrs * xDelta), yAvg, x0Mid + ((cldrs + 1) * xDelta), yAvg)
+            if (cldr.checkCollision(pastCldr)):
                 return spaces
             pastCldr = cldr
         spaces += 1
@@ -74,21 +86,21 @@ def findSpacesBetweenHoriz(col1, col2):
 def findSpacesBetweenVert(col1, col2):
     spaces = 0
 
-    xAvg = ((col1.x2 - col1.x1) + (col2.x2 - col2.x1)) / 2 + (col1.x1 + col2.x1) / 2
+    xAvg = (col1.x1 + col2.x2) / 2
     y0Mid = ((col1.y2 - col1.y1) / 2) + col1.y1
-    yDiff = (col2.y2 - col2.y1)
+    yDiff = (col2.y2 - col1.y2)
 
     # Account for cases of the same row
     print(col2.x1, "<=", y0Mid)
     if (col2.x1 <= y0Mid):
         return -1
 
-    for objs in range(2, 64):
+    for objs in range(2, 8):
         pastCldr = col1
-        yDelta = (yDiff * 1.0) / objs
+        yDelta = yDiff // objs
         for cldrs in range(0, objs):
-            cldr = Collider(xAvg, y0Mid + (cldrs * yDelta), xAvg, y0Mid + (cldrs + 1 * yDelta))
-            if (cldr.checkCollision(pastCldr) or cldr.checkCollision(cldr)):
+            cldr = Collider(xAvg, y0Mid + (cldrs * yDelta), xAvg, y0Mid + ((cldrs + 1) * yDelta))
+            if (cldr.checkCollision(pastCldr)):
                 return spaces
             pastCldr = cldr
         spaces += 1
@@ -284,8 +296,9 @@ def runDudoku():
             # Find out size of min grid
             minGridDimen = 1
             minGridDimen = max(minGridDimen, findSpacesBetweenHoriz(smallestXEntry[1], largestXEntry[1]) + 2)
-            print(minGridDimen, smallestXEntry[1].__dict__, largestXEntry[1].__dict__)
-            print(minGridDimen, smallestYEntry[1].__dict__, largestYEntry[1].__dict__)
+
+            print('fixme', minGridDimen, smallestXEntry[1].__dict__, largestXEntry[1].__dict__)
+            print('fixme', minGridDimen, smallestYEntry[1].__dict__, largestYEntry[1].__dict__)
 
             im = Image.open('./debug.jpg')
 
@@ -330,14 +343,17 @@ def runDudoku():
                 if (sortedSquares[i] == smallestXEntry or sortedSquares[i] == smallestYEntry):
                     continue
                 else:
-                    x = findSpacesBetweenHoriz(smallestXEntry[1], smallestYEntry[1]) + 1
-                    y = findSpacesBetweenVert(smallestYEntry[1], smallestXEntry[1]) + 1
+                    x = findSpacesBetweenHoriz(smallestXEntry[1], sortedSquares[i][1]) + 1
+                    y = findSpacesBetweenVert(smallestYEntry[1], sortedSquares[i][1]) + 1
+                    print('grid', x, y, sortedSquares[i])
                     grid[x][y] = sortedSquares[i][0]
 
             print(minGridDimen)
             for x in range(minGridDimen):
                 for y in range(minGridDimen):
                     print(x, y, grid[x][y])
+            print('\n'.join([''.join(['{:3}'.format(item) for item in row])
+      for row in grid]))
     else:
         print("Takes in a single file as input.")
 
