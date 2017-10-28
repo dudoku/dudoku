@@ -120,7 +120,7 @@ def runDudoku():
 
                 print(i)
                 print(annotations.__getitem__(i).description)
-                if (annotations.__getitem__(i).description.contains("\n")):
+                if ("\n" in annotations.__getitem__(i).description):
                     continue
                 vertices = annotations.__getitem__(i).bounding_poly.vertices
                 print(annotations.__getitem__(i).description, vertices[0].x, vertices[0].y, vertices[1].x, vertices[1].y)
@@ -220,6 +220,32 @@ def runDudoku():
             # Find out size of min grid
             minGridDimen = 1
             minGridDimen = max(minGridDimen, findSpacesBetweenHoriz(smallestXEntry[1], largestXEntry[1]) + 2)
+            print(minGridDimen, smallestXEntry[1].__dict__, largestXEntry[1].__dict__)
+            print(minGridDimen, smallestYEntry[1].__dict__, largestYEntry[1].__dict__)
+
+            im = Image.open('./debug.jpg')
+
+            draw = ImageDraw.Draw(im)
+
+            draw.rectangle([
+                smallestXEntry[1].x1, smallestXEntry[1].y1,
+                smallestXEntry[1].x2, smallestXEntry[1].y2
+            ], 'orange')
+            draw.rectangle([
+                smallestYEntry[1].x1, smallestYEntry[1].y1,
+                smallestYEntry[1].x2, smallestYEntry[1].y2
+            ], 'green')
+            draw.rectangle([
+                largestXEntry[1].x1, largestXEntry[1].y1,
+                largestXEntry[1].x2, largestXEntry[1].y2
+            ], 'yellow')
+            draw.rectangle([
+                largestYEntry[1].x1, largestYEntry[1].y1,
+                largestYEntry[1].x2, largestYEntry[1].y2
+            ], 'blue')
+
+            im.save('./debug.jpg', 'JPEG')
+
             minGridDimen = max(minGridDimen, findSpacesBetweenVert(smallestYEntry[1], largestYEntry[1]) + 2)
             print(minGridDimen)
 
