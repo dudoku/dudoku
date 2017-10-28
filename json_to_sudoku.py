@@ -138,6 +138,7 @@ def runDudoku():
 
             # Find any that contain multiple digits, and find out if they are going right or down then break it up into singulars
             appendToLittleSquares = []
+            rmFromLittleSquares = []
             for i in range(len(littleSquares)):
                 if (len(littleSquares[i][0]) > 1):
                     strlen = len(littleSquares[i][0])
@@ -147,12 +148,12 @@ def runDudoku():
                         ySizePer = ySize / strlen
 
                         # Set the initial box then iterate to adjust the rest
-                        littleSquares[i][1].y2 = littleSquares[i][1].y1 + ySizePer
                         for y in range(1, strlen):
                             # Set bounds and character
                             col = Collider(littleSquares[i][1].x1, littleSquares[i][1].y1 + ySizePer * y + 1, littleSquares[i][1].x2, littleSquares[i][1].y1 + ySizePer * (y + 1) + 1)
                             appendToLittleSquares.append((littleSquares[i][0][y], col))
-                        littleSquares[i][0] = littleSquares[i][0][0]
+                        rmFromLittleSquares.append(littleSquares[i])
+                        appendToLittleSquares.append((littleSquares[i][0][0], littleSquares[i][1].x1, littleSquares[i][1].y1, littleSquares[i][1].x2, littleSquares[i][1].y1 + ySizePer))
                     # If it is heading down
                     else:
                         xSize = littleSquares[i][1].x2 - littleSquares[i][1].x1
@@ -164,13 +165,16 @@ def runDudoku():
                             # Set bounds and character
                             col = Collider(littleSquares[i][1].x1 + xSizePer * x + 1, littleSquares[i][1].y1, littleSquares[i][1].x1 + xSizePer * (x + 1) + 1, littleSquares[i][1].y2)
                             appendToLittleSquares.append((littleSquares[i][0][x], col))
-                        littleSquares[i][0] = littleSquares[i][0][0]
+                        rmFromLittleSquares.append(littleSquares[i])
+                        appendToLittleSquares.append((littleSquares[i][0][0], littleSquares[i][1].x1, littleSquares[i][1].y1, littleSquares[i][1].x1 + xSizePer, littleSquares[i][1].y2))
             for i in range(len(appendToLittleSquares)):
                 littleSquares.append(appendToLittleSquares[i])
+            for i in range(len(rmFromLittleSquares)):
+                littleSquares.remove(rmFromLittleSquares[i])
 
             # Sort the data by rows and then columns
             sortedSquares = []
-            while (littleSquares.count() > 0):
+            while (len(littleSquares) > 0):
                 currIndexToPop = 0
                 for i in range(1, len(littleSquares)):
                     # Check for the position relative to the current index to pop
