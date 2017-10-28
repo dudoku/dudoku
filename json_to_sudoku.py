@@ -120,6 +120,8 @@ def runDudoku():
 
                 print(i)
                 print(annotations.__getitem__(i).description)
+                if (annotations.__getitem__(i).description.contains("\n")):
+                    continue
                 vertices = annotations.__getitem__(i).bounding_poly.vertices
                 print(annotations.__getitem__(i).description, vertices[0].x, vertices[0].y, vertices[1].x, vertices[1].y)
                 drawBounds('./debug.jpg', vertices)
@@ -146,7 +148,7 @@ def runDudoku():
                     # If it is heading right
                     if (littleSquares[i][1].x2 - littleSquares[i][1].x1 > littleSquares[i][1].y2 - littleSquares[i][1].y1):
                         ySize = littleSquares[i][1].y2 - littleSquares[i][1].y1
-                        ySizePer = ySize / strlen
+                        ySizePer = (1.0) * ySize / strlen
 
                         # Set the initial box then iterate to adjust the rest
                         for y in range(1, strlen):
@@ -159,7 +161,7 @@ def runDudoku():
                     # If it is heading down
                     else:
                         xSize = littleSquares[i][1].x2 - littleSquares[i][1].x1
-                        xSizePer = xSize / strlen
+                        xSizePer = (1.0) * xSize / strlen
 
                         # Set the initial box then iterate to adjust the rest
                         littleSquares[i][1].x2 = littleSquares[i][1].x1 + xSizePer
