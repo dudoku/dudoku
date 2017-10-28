@@ -151,7 +151,7 @@ def runDudoku():
                         for y in range(1, strlen):
                             # Set bounds and character
                             col = Collider(littleSquares[i][1].x1, littleSquares[i][1].y1 + ySizePer * y + 1, littleSquares[i][1].x2, littleSquares[i][1].y1 + ySizePer * (y + 1) + 1)
-                            appendToLittleSquares.append(littleSquares[i][0][y], col)
+                            appendToLittleSquares.append((littleSquares[i][0][y], col))
                         littleSquares[i][0] = littleSquares[i][0][0]
                     # If it is heading down
                     else:
@@ -163,7 +163,7 @@ def runDudoku():
                         for x in range(1, strlen):
                             # Set bounds and character
                             col = Collider(littleSquares[i][1].x1 + xSizePer * x + 1, littleSquares[i][1].y1, littleSquares[i][1].x1 + xSizePer * (x + 1) + 1, littleSquares[i][1].y2)
-                            appendToLittleSquares.append(littleSquares[i][0][x], col)
+                            appendToLittleSquares.append((littleSquares[i][0][x], col))
                         littleSquares[i][0] = littleSquares[i][0][0]
             for i in range(len(appendToLittleSquares)):
                 littleSquares.append(appendToLittleSquares[i])
