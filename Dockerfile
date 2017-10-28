@@ -2,5 +2,39 @@ FROM python:2.7-slim-stretch
 
 
 # Install Z3.
-RUN apt update && apt -y install z3=4.4.1-0.3
+RUN apt-get update \
+    && apt-get -y install \
+        curl \
+        gcc \
+        python-dev \
+        python-setuptools \
+        apt-transport-https \
+        lsb-release \
+        openssh-client \
+        git \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN pip install z3
+
+# Install the GCP command line interface.
+# Source: https://github.com/GoogleCloudPlatform/cloud-sdk-docker/blob/master/debian_slim/Dockerfile
+ENV GCLOUD_SDK_VERSION 172.0.0
+
+RUN pip install -U crcmod && \
+    export GCLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
+    echo "deb https://packages.cloud.google.com/apt $GCLOUD_SDK_REPO main" > /etc/apt/sources.list.d/google-cloud-sdk.list && \
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
+    apt-get update && apt-get install -y google-cloud-sdk=${GCLOUD_SDK_VERSION}-0 && \
+    gcloud config set core/disable_usage_reporting true && \
+    gcloud config set component_manager/disable_update_check true && \
+    gcloud config set metrics/environment github_docker_image && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+
+RUN python -m pip install --upgrade google-cloud
+
+
+COPY . "/app"
+
+WORKDIR "/app"
 
