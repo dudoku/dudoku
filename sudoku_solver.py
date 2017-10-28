@@ -106,3 +106,4 @@ if __name__ == '__main__':
         solve_puzzle(n, lines)
     else:
         print("Takes in a single file as input.")
+
