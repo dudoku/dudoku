@@ -346,55 +346,32 @@ def runDudoku():
                     f.write(" ")
                     print(x, y, grid[x][y])
             '''
+
+            if (minGridDimen < 9):
+                for x in range(9 - minGridDimen):
+                    for y in range(9 - minGridDimen):
+                        fileName = x * 9 + y
+                        renderGrid = []
+                        for i in range(9):
+                            subRenderGrid = []
+                            for j in range(9):
+                                  subRenderGrid[j] = "."
+                            renderGrid.append(subRenderGrid)
+
+                        for i in range(x, min(x + minGridDimen, 9)):
+                            for j in range(y, min(y + minGridDimen, 9)):
+                                renderGrid[i][j] = grid[i - x][j - y]
+
+                        f.open("solved" + fileName + ".txt", "w")
+                        f.write(minGridDimen)
+                        f.write(" ")
+                        for i in range(x, min(x + minGridDimen, 9)):
+                            for j in range(y, min(y + minGridDimen, 9)):
+                                f.write(renderGrid[i][j])
+                                f.write(" ")
     else:
         print("Takes in a single file as input.")
 
-
-################################################
-ynew = true
-xnew = true
-xDisplace = 0
-yDisplace = 0
-nextMax = 9
-#fout = open("solved" + 0 + ".txt", "w")
-#if(Math.sqrt(minGridDimen) % 3 != 0):      TODO: increment Displacements, ynew false
-if minGridDimen < 9:
-  f.write(nextMax)
-  f.write(" ")
-  for y in range(nextMax):
-    for x in range(nextMax):
-      fout = open("solved" + 0 + ".txt", "w")
-      if ynew == true:
-        for b in range(yDisplace * nextMax):
-          f.write(".")
-      if xnew == true:
-        for a in range(xDisplace):
-          f.write(".")
-        if x < ((nextMax - xDisplace) - ((nextMax - xDisplace) - minGridDimen)):
-          f.write(grid[x][y])
-          f.write(" ")
-          xnew = false
-        else:
-          f.write(".")
-
-
-#solve as is
-else:
-  fout = open("solved" + 0 + ".txt", "w")
-
-  f.write(minGridDimen)
-  f.write(" ")
-  print(minGridDimen)
-  for x in range(minGridDimen):
-    for y in range(minGridDimen):
-      f.write(grid[x][y])
-      f.write(" ")
-      print(x, y, grid[x][y])
-
-
-
-
-###############################################
 
 
 if __name__ == '__main__':
