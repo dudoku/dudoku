@@ -18,6 +18,23 @@ class Collider(object):
         yCol = (self.y1 >= col.y1 and self.y1 <= col.y2) or (self.y2 >= col.y1 and self.y2 <= col.y2)
         return xCol and yCol
 
+def doOCR(content):
+    # Imports the Google Cloud client library
+    from google.cloud import vision
+    from google.cloud.vision import types
+
+    # Instantiates a client
+    client = vision.ImageAnnotatorClient()
+
+    image = types.Image(content=content)
+
+    response = client.text_detection(image=image)
+
+    print(response)
+
+    return response
+
+
 def findSpacesBetweenHoriz(col1, col2):
     spaces = 0
 
@@ -50,23 +67,26 @@ def findSpacesBetweenVert(col1, col2):
         spaces += 1
     return spaces
 
-if __name__ == '__main__':
-    if True:
-    #if len(sys.argv) != 1:
-        with open("test.json") as f:
-        #with open(sys.argv[1]) as f:
-            data = json.load(f)
-            annotations = data["responses"][0]["textAnnotations"]
+
+def runDudoku():
+    if len(sys.argv) != 1:
+        with open(sys.argv[1]) as f:
+            #data = json.load(f)
+            data = doOCR(f.read())
+
+            #annotations = data["responses"][0]["textAnnotations"]
+            annotations = data.text_annotations
 
             # Create a collection of squares with strings and center x, y coords
             littleSquares = []
             for i in range(len(annotations)):
                 #print(annotations[i])
                 #print("Dest:", annotations[i]["description"])
-                print(annotations[i]["description"])
-                vertices = annotations[i]["boundingPoly"]["vertices"]
-                col = Collider(vertices[0]["x"], vertices[0]["y"], vertices[1]["x"], vertices[1]["y"])
-                littleSquares.append((annotations[i]["description"], col))
+                print(i)
+                print(annotations.__getitem__(i).description)
+                vertices = annotations.__getitem__(i).bounding_poly.vertices
+                col = Collider(vertices[0].x, vertices[0].y, vertices[1].x, vertices[1].y)
+                littleSquares.append((annotations.__getitem__(i).description, col))
 
             # Test data to make sure it only considers the digits
             toRemove = []
@@ -94,3 +114,8 @@ if __name__ == '__main__':
                     print("Vertical spaces between", x, y, "is", spaces)
     else:
         print("Takes in a single file as input.")
+
+
+if __name__ == '__main__':
+    runDudoku()
+
