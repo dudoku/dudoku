@@ -1,6 +1,8 @@
 import json
 import sys
 
+from PIL import Image, ImageDraw
+
 class Collider(object):
 
     def __init__(self, x1, y1, x2, y2):
@@ -79,6 +81,18 @@ def findSpacesBetweenVert(col1, col2):
         spaces += 1
     return spaces
 
+def drawBounds(image_file, vects):
+    im = Image.open(image_file)
+
+    draw = ImageDraw.Draw(im)
+
+    draw.polygon([
+        vects[0].x, vects[0].y,
+        vects[1].x, vects[1].y,
+        vects[2].x, vects[2].y,
+        vects[3].x, vects[3].y], None, 'red')
+
+    im.save('./debug.jpg', 'JPEG')
 
 def runDudoku():
     if len(sys.argv) != 1:
@@ -107,6 +121,7 @@ def runDudoku():
                 print(annotations.__getitem__(i).description)
                 vertices = annotations.__getitem__(i).bounding_poly.vertices
                 print(annotations.__getitem__(i).description, vertices[0].x, vertices[0].y, vertices[1].x, vertices[1].y)
+                drawBounds('./debug.jpg', vertices)
                 col = Collider(vertices[0].x, vertices[0].y, vertices[1].x, vertices[1].y)
                 littleSquares.append((annotations.__getitem__(i).description, col))
 
