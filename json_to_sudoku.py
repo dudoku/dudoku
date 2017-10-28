@@ -112,10 +112,20 @@ def runDudoku():
             # Test data to make sure it only considers the digits
             toRemove = []
             for i in range(len(littleSquares)):
-                if (littleSquares[i][0] < '0' or littleSquares[i][0] > '9'):
+                if (len(littleSquares[i][0]) > 0 and (littleSquares[i][0][0] < '0' or littleSquares[i][0][0] > '9')):
                     toRemove.append(littleSquares[i])
             for i in range(len(toRemove)):
                 littleSquares.remove(toRemove[i])
+
+            # Find any that contain multiple digits, and find out if they are going right or down then break it up into singulars
+            for i in range(len(littleSquares)):
+                if (len(littleSquares[i][0]) > 1):
+                    # If it is heading right
+                    if (littleSquares[i][1].x2 - littleSquares[i][1].x1 > littleSquares[i][1].y2 - littleSquares[i][1].y1):
+                        ySize = littleSquares[i][1].y2 - littleSquares[i][1].y1
+                    # If it is heading down
+                    else:
+                        xSize = littleSquares[i][1].x2 - littleSquares[i][1].x1
 
             # Safe to assume that data is ordered by rows and then columns
 
@@ -126,7 +136,7 @@ def runDudoku():
 
             # Track smallest and largest entry in x and y
             if (len(littleSquares) < 2):
-                print("Found 1 valid entry. Exited incorrectly")
+                print("Found 1 valid entry. Exited incorrectly.")
                 exit(-1)
             smallestXEntry = littleSquares[0]
             largestXEntry = littleSquares[0]
