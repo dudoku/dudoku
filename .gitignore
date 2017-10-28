@@ -1,3 +1,6 @@
+# Ignore the super secret GCloud service account key.
+key.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
