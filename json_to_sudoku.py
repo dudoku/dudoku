@@ -153,7 +153,8 @@ def runDudoku():
                             col = Collider(littleSquares[i][1].x1, littleSquares[i][1].y1 + ySizePer * y + 1, littleSquares[i][1].x2, littleSquares[i][1].y1 + ySizePer * (y + 1) + 1)
                             appendToLittleSquares.append((littleSquares[i][0][y], col))
                         rmFromLittleSquares.append(littleSquares[i])
-                        appendToLittleSquares.append((littleSquares[i][0][0], littleSquares[i][1].x1, littleSquares[i][1].y, littleSquares[i][1].x2, littleSquares[i][1].y1 + ySizePer))
+                        col = Collider(littleSquares[i][1].x1, littleSquares[i][1].y1, littleSquares[i][1].x2, littleSquares[i][1].y1 + ySizePer)
+                        appendToLittleSquares.append((littleSquares[i][0][0], col))
                     # If it is heading down
                     else:
                         xSize = littleSquares[i][1].x2 - littleSquares[i][1].x1
@@ -166,15 +167,16 @@ def runDudoku():
                             col = Collider(littleSquares[i][1].x1 + xSizePer * x + 1, littleSquares[i][1].y1, littleSquares[i][1].x1 + xSizePer * (x + 1) + 1, littleSquares[i][1].y2)
                             appendToLittleSquares.append((littleSquares[i][0][x], col))
                         rmFromLittleSquares.append(littleSquares[i])
-                        appendToLittleSquares.append((littleSquares[i][0][0], littleSquares[i][1].x1, littleSquares[i][1].y, littleSquares[i][1].x1 + xSizePer, littleSquares[i][1].y2))
+                        col = Collider(littleSquares[i][1].x1, littleSquares[i][1].y1, littleSquares[i][1].x1 + xSizePer, littleSquares[i][1].y2)
+                        appendToLittleSquares.append((littleSquares[i][0][0], col))
             for i in range(len(appendToLittleSquares)):
                 littleSquares.append(appendToLittleSquares[i])
             for i in range(len(rmFromLittleSquares)):
                 littleSquares.remove(rmFromLittleSquares[i])
-                
+
             # Sort the data by rows and then columns
             sortedSquares = []
-            while (littleSquares.count() > 0):
+            while (len(littleSquares) > 0):
                 currIndexToPop = 0
                 for i in range(1, len(littleSquares)):
                     # Check for the position relative to the current index to pop
