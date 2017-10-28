@@ -41,18 +41,19 @@ def findSpacesBetweenHoriz(col1, col2):
     spaces = 0
 
     yAvg = ((col1.y2 - col1.y1) + (col2.y2 - col2.y1)) / 2 + (col1.y1 + col2.y1) / 2
-    x0Mid = ((col1.x2 - col1.x1) / 2)
-    xDiff = ((col2.x2 - col2.x1) / 2) - x0Mid
+    x0Mid = ((col1.x2 - col1.x1) / 2) + col1.x1
+    xDiff = (col2.x2 - col2.x1)
 
     # Account for cases of the same column
-    print(col2.x1, "<=", col1.x1 + x0Mid)
-    if (col2.x1 <= col1.x1 + x0Mid):
+    print(col2.x1, "<=", x0Mid)
+    if (col2.x1 <= x0Mid):
         return -1
 
     for objs in range(2, 64):
         pastCldr = col1
+        xDelta = (xDiff * 1.0) / objs
         for cldrs in range(0, objs):
-            cldr = Collider(x0Mid + ((cldrs / objs) * xDiff), yAvg, x0Mid + (((cldrs + 1) / objs) * xDiff), yAvg)
+            cldr = Collider(x0Mid + (cldrs * xDelta), yAvg, x0Mid + (cldrs + 1 * xDelta), yAvg)
             if (cldr.checkCollision(pastCldr) or cldr.checkCollision(cldr)):
                 return spaces
             pastCldr = cldr
@@ -63,18 +64,19 @@ def findSpacesBetweenVert(col1, col2):
     spaces = 0
 
     xAvg = ((col1.x2 - col1.x1) + (col2.x2 - col2.x1)) / 2 + (col1.x1 + col2.x1) / 2
-    y0Mid = ((col1.y2 - col1.y1) / 2)
-    yDiff = ((col2.y2 - col2.y1) / 2) - y0Mid
+    y0Mid = ((col1.y2 - col1.y1) / 2) + col1.y1
+    yDiff = (col2.y2 - col2.y1)
 
     # Account for cases of the same row
-    print(col2.y1, "<=", col1.y1 + y0Mid)
-    if (col2.y1 <= col1.y1 + y0Mid):
+    print(col2.x1, "<=", y0Mid)
+    if (col2.x1 <= y0Mid):
         return -1
 
     for objs in range(2, 64):
         pastCldr = col1
+        yDelta = (yDiff * 1.0) / objs
         for cldrs in range(0, objs):
-            cldr = Collider(xAvg, y0Mid + ((cldrs / objs) * yDiff), xAvg, y0Mid + (((cldrs + 1) / objs) * yDiff))
+            cldr = Collider(xAvg, y0Mid + (cldrs * yDelta), xAvg, y0Mid + (cldrs + 1 * yDelta))
             if (cldr.checkCollision(pastCldr) or cldr.checkCollision(cldr)):
                 return spaces
             pastCldr = cldr
@@ -119,7 +121,7 @@ def runDudoku():
 
                 print(i)
                 print(annotations.__getitem__(i).description)
-                if (annotations.__getitem__(i).description.contains("\n")):
+                if ("\n" in annotations.__getitem__(i).description):
                     continue
                 vertices = annotations.__getitem__(i).bounding_poly.vertices
                 print(annotations.__getitem__(i).description, vertices[0].x, vertices[0].y, vertices[1].x, vertices[1].y)
