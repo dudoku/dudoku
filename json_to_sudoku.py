@@ -127,36 +127,84 @@ def runDudoku():
 
             # Test data to make sure it only considers the digits
             toRemove = []
+            #largestWidth = 0
             for i in range(len(littleSquares)):
-                if (littleSquares[i][0] < '0' or littleSquares[i][0] > '9'):
+                #largestWidth = max(largestWidth, littleSquares[i][1].x2)
+                if (len(littleSquares[i][0]) > 0 and (littleSquares[i][0][0] < '0' or littleSquares[i][0][0] > '9')):
                     toRemove.append(littleSquares[i])
             for i in range(len(toRemove)):
                 littleSquares.remove(toRemove[i])
+            #largestWidth *= 1.25
 
-            # Safe to assume that data is ordered by rows and then columns
+            # Find any that contain multiple digits, and find out if they are going right or down then break it up into singulars
+            appendToLittleSquares = []
+            for i in range(len(littleSquares)):
+                if (len(littleSquares[i][0]) > 1):
+                    strlen = len(littleSquares[i][0])
+                    # If it is heading right
+                    if (littleSquares[i][1].x2 - littleSquares[i][1].x1 > littleSquares[i][1].y2 - littleSquares[i][1].y1):
+                        ySize = littleSquares[i][1].y2 - littleSquares[i][1].y1
+                        ySizePer = ySize / strlen
+
+                        # Set the initial box then iterate to adjust the rest
+                        littleSquares[i][1].y2 = littleSquares[i][1].y1 + ySizePer
+                        for y in range(1, strlen):
+                            # Set bounds and character
+                            col = Collider(littleSquares[i][1].x1, littleSquares[i][1].y1 + ySizePer * y + 1, littleSquares[i][1].x2, littleSquares[i][1].y1 + ySizePer * (y + 1) + 1)
+                            appendToLittleSquares.append(littleSquares[i][0][y], col)
+                        littleSquares[i][0] = littleSquares[i][0][0]
+                    # If it is heading down
+                    else:
+                        xSize = littleSquares[i][1].x2 - littleSquares[i][1].x1
+                        xSizePer = xSize / strlen
+
+                        # Set the initial box then iterate to adjust the rest
+                        littleSquares[i][1].x2 = littleSquares[i][1].x1 + xSizePer
+                        for x in range(1, strlen):
+                            # Set bounds and character
+                            col = Collider(littleSquares[i][1].x1 + xSizePer * x + 1, littleSquares[i][1].y1, littleSquares[i][1].x1 + xSizePer * (x + 1) + 1, littleSquares[i][1].y2)
+                            appendToLittleSquares.append(littleSquares[i][0][x], col)
+                        littleSquares[i][0] = littleSquares[i][0][0]
+            for i in range(len(appendToLittleSquares)):
+                littleSquares.append(appendToLittleSquares[i])
+
+            # Sort the data by rows and then columns
+            sortedSquares = []
+            while (littleSquares.count() > 0):
+                currIndexToPop = 0
+                for i in range(1, len(littleSquares)):
+                    # Check for the position relative to the current index to pop
+                    if (littleSquares[i][1].y1 == littleSquares[currIndexToPop][1].yMid):
+                        if (littleSquares[i][1].x1 <= littleSquares[currIndexToPop][1].xMid):
+                            currIndexToPop = i
+                    # If it's on a lower row it should be selected right away
+                    elif (littleSquares[i][1].y1 < littleSquares[currIndexToPop][1].yMid):
+                        currIndexToPop = i
+                sortedSquares.append(littleSquares[currIndexToPop])
+                littleSquares.pop(currIndexToPop)
 
             # All data thus far
             print("What survived the purge:")
-            for i in range(len(littleSquares)):
-                print(littleSquares[i])
+            for i in range(len(sortedSquares)):
+                print(sortedSquares[i])
 
             # Track smallest and largest entry in x and y
-            if (len(littleSquares) < 2):
-                print("Found 1 valid entry. Exited incorrectly")
+            if (len(sortedSquares) < 2):
+                print("Found 1 valid entry. Exited incorrectly.")
                 exit(-1)
-            smallestXEntry = littleSquares[0]
-            largestXEntry = littleSquares[0]
-            smallestYEntry = littleSquares[0]
-            largestYEntry = littleSquares[0]
-            for i in range(len(littleSquares)):
-                if (smallestXEntry[1].x1 > littleSquares[i][1].x1):
-                    smallestXEntry = littleSquares[i]
-                if (largestXEntry[1].x2 < littleSquares[i][1].x2):
-                    largestXEntry = littleSquares[i]
-                if (smallestYEntry[1].y1 > littleSquares[i][1].y1):
-                    smallestYEntry = littleSquares[i]
-                if (largestYEntry[1].y2 < littleSquares[i][1].y2):
-                    largestYEntry = littleSquares[i]
+            smallestXEntry = sortedSquares[0]
+            largestXEntry = sortedSquares[0]
+            smallestYEntry = sortedSquares[0]
+            largestYEntry = sortedSquares[0]
+            for i in range(len(sortedSquares)):
+                if (smallestXEntry[1].x1 > sortedSquares[i][1].x1):
+                    smallestXEntry = sortedSquares[i]
+                if (largestXEntry[1].x2 < sortedSquares[i][1].x2):
+                    largestXEntry = sortedSquares[i]
+                if (smallestYEntry[1].y1 > sortedSquares[i][1].y1):
+                    smallestYEntry = sortedSquares[i]
+                if (largestYEntry[1].y2 < sortedSquares[i][1].y2):
+                    largestYEntry = sortedSquares[i]
 
             # Find out size of min grid
             minGridDimen = 1
@@ -177,36 +225,18 @@ def runDudoku():
             grid[findSpacesBetweenHoriz(smallestXEntry[1], smallestYEntry[1]) + 1][0] = smallestYEntry[0]
 
             # Find spaces between min x/y to place the rest of the entries in the grid
-            for i in range(len(littleSquares)):
-                if (littleSquares[i] == smallestXEntry or littleSquares[i] == smallestYEntry):
+            for i in range(len(sortedSquares)):
+                if (sortedSquares[i] == smallestXEntry or sortedSquares[i] == smallestYEntry):
                     continue
                 else:
                     x = findSpacesBetweenHoriz(smallestXEntry[1], smallestYEntry[1]) + 1
                     y = findSpacesBetweenVert(smallestYEntry[1], smallestXEntry[1]) + 1
-                    grid[x][y] = littleSquares[i][0]
+                    grid[x][y] = sortedSquares[i][0]
 
             print(minGridDimen)
             for x in range(minGridDimen):
                 for y in range(minGridDimen):
                     print(x, y, grid[x][y])
-
-            """
-            row = 0
-            column = 0
-            # Cover all cases, with breaks throughout
-            for y in range(len(littleSquares) - 1):
-                for x in range(len(littleSquares) - 1):
-                    # Stop checking horizontal spaces if clearly on a different row
-                    if ():
-                        row += 1
-                    else:
-                        spaces = findSpacesBetweenHoriz(littleSquares[x][1], littleSquares[x + 1][1])
-                        print("Horiz spaces between", x, y, "is", spaces)
-            for y in range(len(littleSquares) - 1):
-                for x in range(len(littleSquares) - 1):
-                    spaces = findSpacesBetweenVert(littleSquares[x][1], littleSquares[x + 1][1])
-                    print("Vertical spaces between", x, y, "is", spaces)
-            """
     else:
         print("Takes in a single file as input.")
 
