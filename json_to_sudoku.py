@@ -1,5 +1,6 @@
 import json
 import sys
+import Math
 
 from PIL import Image, ImageDraw
 
@@ -334,8 +335,7 @@ def runDudoku():
                     y = findSpacesBetweenVert(smallestYEntry[1], smallestXEntry[1]) + 1
                     grid[x][y] = sortedSquares[i][0]
 
-
-
+            '''
             fout = open("solved" + 0 + ".txt", "w")
             f.write(minGridDimen)
             f.write(" ")
@@ -345,8 +345,56 @@ def runDudoku():
                     f.write(grid[x][y])
                     f.write(" ")
                     print(x, y, grid[x][y])
+            '''
     else:
         print("Takes in a single file as input.")
+
+
+################################################
+ynew = true
+xnew = true
+xDisplace = 0
+yDisplace = 0
+nextMax = 9
+#fout = open("solved" + 0 + ".txt", "w")
+#if(Math.sqrt(minGridDimen) % 3 != 0):      TODO: increment Displacements, ynew false
+if minGridDimen < 9:
+  f.write(nextMax)
+  f.write(" ")
+  for y in range(nextMax):
+    for x in range(nextMax):
+      fout = open("solved" + 0 + ".txt", "w")
+      if ynew == true:
+        for b in range(yDisplace * nextMax):
+          f.write(".")
+      if xnew == true:
+        for a in range(xDisplace):
+          f.write(".")
+        if x < ((nextMax - xDisplace) - ((nextMax - xDisplace) - minGridDimen)):
+          f.write(grid[x][y])
+          f.write(" ")
+          xnew = false
+        else:
+          f.write(".")
+
+
+#solve as is
+else:
+  fout = open("solved" + 0 + ".txt", "w")
+
+  f.write(minGridDimen)
+  f.write(" ")
+  print(minGridDimen)
+  for x in range(minGridDimen):
+    for y in range(minGridDimen):
+      f.write(grid[x][y])
+      f.write(" ")
+      print(x, y, grid[x][y])
+
+
+
+
+###############################################
 
 
 if __name__ == '__main__':
