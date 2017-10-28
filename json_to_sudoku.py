@@ -14,6 +14,7 @@ class Collider(object):
         self.x2 = self.xMid + self.HALF_AVG_SIZE
         self.y1 = self.yMid - self.HALF_AVG_SIZE
         self.y2 = self.yMid + self.HALF_AVG_SIZE
+        print('collider', x1, y1, x2, y2, ',', self.HALF_AVG_SIZE, self.xMid, self.yMid, ',', self.x1, self.x2, self.y1, self.y2)
 
     def checkCollision(self, col):
         xCol = (self.x1 >= col.x1 and self.x1 <= col.x2) or (self.x2 >= col.x1 and self.x2 <= col.x2)
@@ -164,9 +165,11 @@ def runDudoku():
                         littleSquares[i][1].x2 = littleSquares[i][1].x1 + xSizePer
                         for x in range(1, strlen):
                             # Set bounds and character
+                            print('HERE', xSize, strlen, xSizePer, littleSquares[i][1].y1)
                             col = Collider(littleSquares[i][1].x1 + xSizePer * x + 1, littleSquares[i][1].y1, littleSquares[i][1].x1 + xSizePer * (x + 1) + 1, littleSquares[i][1].y2)
                             appendToLittleSquares.append((littleSquares[i][0][x], col))
                         rmFromLittleSquares.append(littleSquares[i])
+                        print('abcd')
                         col = Collider(littleSquares[i][1].x1, littleSquares[i][1].y1, littleSquares[i][1].x1 + xSizePer, littleSquares[i][1].y2)
                         appendToLittleSquares.append((littleSquares[i][0][0], col))
             for i in range(len(appendToLittleSquares)):
