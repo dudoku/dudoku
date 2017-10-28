@@ -1,5 +1,6 @@
 import json
 import sys
+import Math
 
 from PIL import Image, ImageDraw
 
@@ -348,14 +349,43 @@ def runDudoku():
                     print('grid', x, y, sortedSquares[i])
                     grid[x][y] = sortedSquares[i][0]
 
+            '''
+            fout = open("solved" + 0 + ".txt", "w")
+            f.write(minGridDimen)
+            f.write(" ")
             print(minGridDimen)
             for x in range(minGridDimen):
                 for y in range(minGridDimen):
+                    f.write(grid[x][y])
+                    f.write(" ")
                     print(x, y, grid[x][y])
-            print('\n'.join([''.join(['{:3}'.format(item) for item in row])
-      for row in grid]))
+            '''
+
+            if (minGridDimen < 9):
+                for x in range(9 - minGridDimen):
+                    for y in range(9 - minGridDimen):
+                        fileName = x * 9 + y
+                        renderGrid = []
+                        for i in range(9):
+                            subRenderGrid = []
+                            for j in range(9):
+                                  subRenderGrid[j] = "."
+                            renderGrid.append(subRenderGrid)
+
+                        for i in range(x, min(x + minGridDimen, 9)):
+                            for j in range(y, min(y + minGridDimen, 9)):
+                                renderGrid[i][j] = grid[i - x][j - y]
+
+                        f.open("solved" + fileName + ".txt", "w")
+                        f.write(minGridDimen)
+                        f.write(" ")
+                        for i in range(x, min(x + minGridDimen, 9)):
+                            for j in range(y, min(y + minGridDimen, 9)):
+                                f.write(renderGrid[i][j])
+                                f.write(" ")
     else:
         print("Takes in a single file as input.")
+
 
 
 if __name__ == '__main__':
