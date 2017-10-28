@@ -119,6 +119,21 @@ def drawBounds(image_file, vects):
 
     im.save('./debug.jpg', 'JPEG')
 
+
+def getAnchorVerticies(vertices):
+    """Get the top left and bottom right vertices in that order."""
+    return [
+      dict(
+        x= min([v.x for v in vertices]),
+        y= min([v.y for v in vertices])
+      ),
+      dict(
+        x= max([v.x for v in vertices]),
+        y= max([v.y for v in vertices])
+      )
+    ]
+
+
 def runDudoku():
     if len(sys.argv) != 1:
         with open(sys.argv[1]) as f:
@@ -147,9 +162,11 @@ def runDudoku():
                 if ("\n" in annotations.__getitem__(i).description):
                     continue
                 vertices = annotations.__getitem__(i).bounding_poly.vertices
-                print(annotations.__getitem__(i).description, vertices[0].x, vertices[0].y, vertices[2].x, vertices[2].y)
+                #print(annotations.__getitem__(i).description, vertices[3].x, vertices[3].y, vertices[1].x, vertices[1].y)
+                anchorVerts = getAnchorVerticies(vertices)
+                print(annotations.__getitem__(i).description, anchorVerts)
                 drawBounds('./debug.jpg', vertices)
-                col = Collider(vertices[0].x, vertices[0].y, vertices[2].x, vertices[2].y)
+                col = Collider(anchorVerts[0]["x"], anchorVerts[0]["y"], anchorVerts[1]["x"], anchorVerts[1]["y"])
                 littleSquares.append((annotations.__getitem__(i).description, col))
 
             # Test data to make sure it only considers the digits
@@ -169,10 +186,10 @@ def runDudoku():
             for i in range(len(littleSquares)):
                 if (len(littleSquares[i][0]) > 1):
                     strlen = len(littleSquares[i][0])
-                    # If it is heading right
                     print('wut?!',
                           littleSquares[i][1].x2, littleSquares[i][1].x1, littleSquares[i][1].y2, littleSquares[i][1].y1, 'wut moar', littleSquares[i][1].x2 - littleSquares[i][1].x1, littleSquares[i][1].y2 - littleSquares[i][1].y1)
-                    if (littleSquares[i][1].x2 - littleSquares[i][1].x1 > littleSquares[i][1].y2 - littleSquares[i][1].y1):
+                    # If it is heading right
+                    if (littleSquares[i][1].x2 - littleSquares[i][1].x1 < littleSquares[i][1].y2 - littleSquares[i][1].y1):
                         ySize = littleSquares[i][1].y2 - littleSquares[i][1].y1
                         ySizePer = ySize // strlen
                         print('isit', littleSquares[i][1].y2, littleSquares[i][1].y1, ySize, strlen, ySizePer)
