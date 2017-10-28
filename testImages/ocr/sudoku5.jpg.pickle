@@ -1,0 +1,1446 @@
+[locale: "es"
+description: "Instrucciones:\nSOLUCIO\nSUDOKUAY\nEl objetivo es colocar n\303\272meros del I al 9 en los cuadros vacios\nde tal forma que cada columna, cada fila y cada bloque de 3x3\ncontengan los n\303\272meros del 1 al 9 sin repetirse\nConceptis Sudoku\nDave Gr\n2\n8\n6 2 9\n2\n7 8 6\n4\nHORIZONTAL\n3\n2\n1. Llenar de charcos\n6. Abulia, abandono\n8\n0\n11. Procedimiento\no radioel\303\251ctrico que\npermite a un barco\ndeterminar su\n"
+bounding_poly {
+  vertices {
+    x: 90
+    y: 25
+  }
+  vertices {
+    x: 398
+    y: 25
+  }
+  vertices {
+    x: 398
+    y: 295
+  }
+  vertices {
+    x: 90
+    y: 295
+  }
+}
+, description: "Instrucciones:"
+bounding_poly {
+  vertices {
+    x: 165
+    y: 25
+  }
+  vertices {
+    x: 226
+    y: 25
+  }
+  vertices {
+    x: 226
+    y: 32
+  }
+  vertices {
+    x: 165
+    y: 32
+  }
+}
+, description: "SOLUCIO"
+bounding_poly {
+  vertices {
+    x: 345
+    y: 28
+  }
+  vertices {
+    x: 398
+    y: 29
+  }
+  vertices {
+    x: 398
+    y: 37
+  }
+  vertices {
+    x: 345
+    y: 36
+  }
+}
+, description: "SUDOKUAY"
+bounding_poly {
+  vertices {
+    x: 332
+    y: 39
+  }
+  vertices {
+    x: 398
+    y: 40
+  }
+  vertices {
+    x: 398
+    y: 49
+  }
+  vertices {
+    x: 332
+    y: 48
+  }
+}
+, description: "El"
+bounding_poly {
+  vertices {
+    x: 90
+    y: 36
+  }
+  vertices {
+    x: 96
+    y: 36
+  }
+  vertices {
+    x: 96
+    y: 42
+  }
+  vertices {
+    x: 90
+    y: 42
+  }
+}
+, description: "objetivo"
+bounding_poly {
+  vertices {
+    x: 101
+    y: 36
+  }
+  vertices {
+    x: 125
+    y: 36
+  }
+  vertices {
+    x: 125
+    y: 43
+  }
+  vertices {
+    x: 101
+    y: 43
+  }
+}
+, description: "es"
+bounding_poly {
+  vertices {
+    x: 128
+    y: 38
+  }
+  vertices {
+    x: 133
+    y: 38
+  }
+  vertices {
+    x: 133
+    y: 42
+  }
+  vertices {
+    x: 128
+    y: 42
+  }
+}
+, description: "colocar"
+bounding_poly {
+  vertices {
+    x: 137
+    y: 37
+  }
+  vertices {
+    x: 160
+    y: 37
+  }
+  vertices {
+    x: 160
+    y: 43
+  }
+  vertices {
+    x: 137
+    y: 43
+  }
+}
+, description: "n\303\272meros"
+bounding_poly {
+  vertices {
+    x: 164
+    y: 38
+  }
+  vertices {
+    x: 192
+    y: 38
+  }
+  vertices {
+    x: 192
+    y: 42
+  }
+  vertices {
+    x: 164
+    y: 42
+  }
+}
+, description: "del"
+bounding_poly {
+  vertices {
+    x: 195
+    y: 36
+  }
+  vertices {
+    x: 204
+    y: 36
+  }
+  vertices {
+    x: 204
+    y: 42
+  }
+  vertices {
+    x: 195
+    y: 42
+  }
+}
+, description: "I"
+bounding_poly {
+  vertices {
+    x: 209
+    y: 36
+  }
+  vertices {
+    x: 210
+    y: 36
+  }
+  vertices {
+    x: 210
+    y: 42
+  }
+  vertices {
+    x: 209
+    y: 42
+  }
+}
+, description: "al"
+bounding_poly {
+  vertices {
+    x: 215
+    y: 36
+  }
+  vertices {
+    x: 219
+    y: 36
+  }
+  vertices {
+    x: 219
+    y: 42
+  }
+  vertices {
+    x: 215
+    y: 42
+  }
+}
+, description: "9"
+bounding_poly {
+  vertices {
+    x: 223
+    y: 36
+  }
+  vertices {
+    x: 226
+    y: 36
+  }
+  vertices {
+    x: 226
+    y: 41
+  }
+  vertices {
+    x: 223
+    y: 41
+  }
+}
+, description: "en"
+bounding_poly {
+  vertices {
+    x: 229
+    y: 38
+  }
+  vertices {
+    x: 236
+    y: 38
+  }
+  vertices {
+    x: 236
+    y: 42
+  }
+  vertices {
+    x: 229
+    y: 42
+  }
+}
+, description: "los"
+bounding_poly {
+  vertices {
+    x: 240
+    y: 34
+  }
+  vertices {
+    x: 249
+    y: 34
+  }
+  vertices {
+    x: 249
+    y: 40
+  }
+  vertices {
+    x: 240
+    y: 40
+  }
+}
+, description: "cuadros"
+bounding_poly {
+  vertices {
+    x: 252
+    y: 34
+  }
+  vertices {
+    x: 279
+    y: 34
+  }
+  vertices {
+    x: 279
+    y: 40
+  }
+  vertices {
+    x: 252
+    y: 40
+  }
+}
+, description: "vacios"
+bounding_poly {
+  vertices {
+    x: 283
+    y: 34
+  }
+  vertices {
+    x: 304
+    y: 34
+  }
+  vertices {
+    x: 304
+    y: 40
+  }
+  vertices {
+    x: 283
+    y: 40
+  }
+}
+, description: "de"
+bounding_poly {
+  vertices {
+    x: 90
+    y: 46
+  }
+  vertices {
+    x: 95
+    y: 46
+  }
+  vertices {
+    x: 95
+    y: 51
+  }
+  vertices {
+    x: 90
+    y: 51
+  }
+}
+, description: "tal"
+bounding_poly {
+  vertices {
+    x: 99
+    y: 46
+  }
+  vertices {
+    x: 106
+    y: 46
+  }
+  vertices {
+    x: 106
+    y: 51
+  }
+  vertices {
+    x: 99
+    y: 51
+  }
+}
+, description: "forma"
+bounding_poly {
+  vertices {
+    x: 110
+    y: 46
+  }
+  vertices {
+    x: 128
+    y: 46
+  }
+  vertices {
+    x: 128
+    y: 52
+  }
+  vertices {
+    x: 110
+    y: 52
+  }
+}
+, description: "que"
+bounding_poly {
+  vertices {
+    x: 132
+    y: 48
+  }
+  vertices {
+    x: 143
+    y: 48
+  }
+  vertices {
+    x: 143
+    y: 53
+  }
+  vertices {
+    x: 132
+    y: 53
+  }
+}
+, description: "cada"
+bounding_poly {
+  vertices {
+    x: 146
+    y: 46
+  }
+  vertices {
+    x: 160
+    y: 46
+  }
+  vertices {
+    x: 160
+    y: 52
+  }
+  vertices {
+    x: 146
+    y: 52
+  }
+}
+, description: "columna,"
+bounding_poly {
+  vertices {
+    x: 164
+    y: 46
+  }
+  vertices {
+    x: 193
+    y: 46
+  }
+  vertices {
+    x: 193
+    y: 52
+  }
+  vertices {
+    x: 164
+    y: 52
+  }
+}
+, description: "cada"
+bounding_poly {
+  vertices {
+    x: 198
+    y: 46
+  }
+  vertices {
+    x: 211
+    y: 46
+  }
+  vertices {
+    x: 211
+    y: 52
+  }
+  vertices {
+    x: 198
+    y: 52
+  }
+}
+, description: "fila"
+bounding_poly {
+  vertices {
+    x: 215
+    y: 46
+  }
+  vertices {
+    x: 224
+    y: 46
+  }
+  vertices {
+    x: 224
+    y: 51
+  }
+  vertices {
+    x: 215
+    y: 51
+  }
+}
+, description: "y"
+bounding_poly {
+  vertices {
+    x: 228
+    y: 47
+  }
+  vertices {
+    x: 231
+    y: 47
+  }
+  vertices {
+    x: 231
+    y: 53
+  }
+  vertices {
+    x: 228
+    y: 53
+  }
+}
+, description: "cada"
+bounding_poly {
+  vertices {
+    x: 235
+    y: 46
+  }
+  vertices {
+    x: 249
+    y: 46
+  }
+  vertices {
+    x: 249
+    y: 51
+  }
+  vertices {
+    x: 235
+    y: 51
+  }
+}
+, description: "bloque"
+bounding_poly {
+  vertices {
+    x: 254
+    y: 45
+  }
+  vertices {
+    x: 276
+    y: 45
+  }
+  vertices {
+    x: 276
+    y: 53
+  }
+  vertices {
+    x: 254
+    y: 53
+  }
+}
+, description: "de"
+bounding_poly {
+  vertices {
+    x: 280
+    y: 45
+  }
+  vertices {
+    x: 287
+    y: 45
+  }
+  vertices {
+    x: 287
+    y: 51
+  }
+  vertices {
+    x: 280
+    y: 51
+  }
+}
+, description: "3x3"
+bounding_poly {
+  vertices {
+    x: 291
+    y: 45
+  }
+  vertices {
+    x: 303
+    y: 45
+  }
+  vertices {
+    x: 303
+    y: 51
+  }
+  vertices {
+    x: 291
+    y: 51
+  }
+}
+, description: "contengan"
+bounding_poly {
+  vertices {
+    x: 90
+    y: 57
+  }
+  vertices {
+    x: 121
+    y: 57
+  }
+  vertices {
+    x: 121
+    y: 65
+  }
+  vertices {
+    x: 90
+    y: 65
+  }
+}
+, description: "los"
+bounding_poly {
+  vertices {
+    x: 125
+    y: 57
+  }
+  vertices {
+    x: 132
+    y: 57
+  }
+  vertices {
+    x: 132
+    y: 65
+  }
+  vertices {
+    x: 125
+    y: 65
+  }
+}
+, description: "n\303\272meros"
+bounding_poly {
+  vertices {
+    x: 138
+    y: 57
+  }
+  vertices {
+    x: 163
+    y: 57
+  }
+  vertices {
+    x: 163
+    y: 65
+  }
+  vertices {
+    x: 138
+    y: 65
+  }
+}
+, description: "del"
+bounding_poly {
+  vertices {
+    x: 168
+    y: 57
+  }
+  vertices {
+    x: 176
+    y: 57
+  }
+  vertices {
+    x: 176
+    y: 65
+  }
+  vertices {
+    x: 168
+    y: 65
+  }
+}
+, description: "1"
+bounding_poly {
+  vertices {
+    x: 181
+    y: 57
+  }
+  vertices {
+    x: 182
+    y: 57
+  }
+  vertices {
+    x: 182
+    y: 65
+  }
+  vertices {
+    x: 181
+    y: 65
+  }
+}
+, description: "al"
+bounding_poly {
+  vertices {
+    x: 188
+    y: 57
+  }
+  vertices {
+    x: 192
+    y: 57
+  }
+  vertices {
+    x: 192
+    y: 65
+  }
+  vertices {
+    x: 188
+    y: 65
+  }
+}
+, description: "9"
+bounding_poly {
+  vertices {
+    x: 196
+    y: 57
+  }
+  vertices {
+    x: 197
+    y: 57
+  }
+  vertices {
+    x: 197
+    y: 65
+  }
+  vertices {
+    x: 196
+    y: 65
+  }
+}
+, description: "sin"
+bounding_poly {
+  vertices {
+    x: 202
+    y: 57
+  }
+  vertices {
+    x: 210
+    y: 57
+  }
+  vertices {
+    x: 210
+    y: 65
+  }
+  vertices {
+    x: 202
+    y: 65
+  }
+}
+, description: "repetirse"
+bounding_poly {
+  vertices {
+    x: 215
+    y: 57
+  }
+  vertices {
+    x: 242
+    y: 57
+  }
+  vertices {
+    x: 242
+    y: 65
+  }
+  vertices {
+    x: 215
+    y: 65
+  }
+}
+, description: "Conceptis"
+bounding_poly {
+  vertices {
+    x: 101
+    y: 77
+  }
+  vertices {
+    x: 141
+    y: 77
+  }
+  vertices {
+    x: 141
+    y: 84
+  }
+  vertices {
+    x: 101
+    y: 84
+  }
+}
+, description: "Sudoku"
+bounding_poly {
+  vertices {
+    x: 148
+    y: 77
+  }
+  vertices {
+    x: 186
+    y: 77
+  }
+  vertices {
+    x: 186
+    y: 84
+  }
+  vertices {
+    x: 148
+    y: 84
+  }
+}
+, description: "Dave"
+bounding_poly {
+  vertices {
+    x: 250
+    y: 80
+  }
+  vertices {
+    x: 263
+    y: 79
+  }
+  vertices {
+    x: 263
+    y: 84
+  }
+  vertices {
+    x: 250
+    y: 85
+  }
+}
+, description: "Gr"
+bounding_poly {
+  vertices {
+    x: 267
+    y: 80
+  }
+  vertices {
+    x: 273
+    y: 80
+  }
+  vertices {
+    x: 273
+    y: 84
+  }
+  vertices {
+    x: 267
+    y: 84
+  }
+}
+, description: "2"
+bounding_poly {
+  vertices {
+    x: 270
+    y: 93
+  }
+  vertices {
+    x: 277
+    y: 93
+  }
+  vertices {
+    x: 277
+    y: 102
+  }
+  vertices {
+    x: 270
+    y: 102
+  }
+}
+, description: "8"
+bounding_poly {
+  vertices {
+    x: 125
+    y: 108
+  }
+  vertices {
+    x: 132
+    y: 108
+  }
+  vertices {
+    x: 132
+    y: 118
+  }
+  vertices {
+    x: 125
+    y: 118
+  }
+}
+, description: "6"
+bounding_poly {
+  vertices {
+    x: 145
+    y: 124
+  }
+  vertices {
+    x: 149
+    y: 124
+  }
+  vertices {
+    x: 149
+    y: 136
+  }
+  vertices {
+    x: 145
+    y: 136
+  }
+}
+, description: "2"
+bounding_poly {
+  vertices {
+    x: 162
+    y: 124
+  }
+  vertices {
+    x: 189
+    y: 125
+  }
+  vertices {
+    x: 189
+    y: 137
+  }
+  vertices {
+    x: 162
+    y: 136
+  }
+}
+, description: "9"
+bounding_poly {
+  vertices {
+    x: 202
+    y: 125
+  }
+  vertices {
+    x: 231
+    y: 126
+  }
+  vertices {
+    x: 231
+    y: 138
+  }
+  vertices {
+    x: 202
+    y: 137
+  }
+}
+, description: "2"
+bounding_poly {
+  vertices {
+    x: 104
+    y: 142
+  }
+  vertices {
+    x: 109
+    y: 142
+  }
+  vertices {
+    x: 107
+    y: 185
+  }
+  vertices {
+    x: 102
+    y: 185
+  }
+}
+, description: "7"
+bounding_poly {
+  vertices {
+    x: 138
+    y: 191
+  }
+  vertices {
+    x: 147
+    y: 191
+  }
+  vertices {
+    x: 146
+    y: 203
+  }
+  vertices {
+    x: 137
+    y: 203
+  }
+}
+, description: "8"
+bounding_poly {
+  vertices {
+    x: 162
+    y: 192
+  }
+  vertices {
+    x: 188
+    y: 193
+  }
+  vertices {
+    x: 187
+    y: 205
+  }
+  vertices {
+    x: 161
+    y: 204
+  }
+}
+, description: "6"
+bounding_poly {
+  vertices {
+    x: 204
+    y: 194
+  }
+  vertices {
+    x: 231
+    y: 195
+  }
+  vertices {
+    x: 230
+    y: 207
+  }
+  vertices {
+    x: 203
+    y: 206
+  }
+}
+, description: "4"
+bounding_poly {
+  vertices {
+    x: 123
+    y: 209
+  }
+  vertices {
+    x: 130
+    y: 209
+  }
+  vertices {
+    x: 130
+    y: 218
+  }
+  vertices {
+    x: 123
+    y: 218
+  }
+}
+, description: "HORIZONTAL"
+bounding_poly {
+  vertices {
+    x: 324
+    y: 209
+  }
+  vertices {
+    x: 391
+    y: 209
+  }
+  vertices {
+    x: 391
+    y: 218
+  }
+  vertices {
+    x: 324
+    y: 218
+  }
+}
+, description: "3"
+bounding_poly {
+  vertices {
+    x: 240
+    y: 214
+  }
+  vertices {
+    x: 253
+    y: 214
+  }
+  vertices {
+    x: 253
+    y: 224
+  }
+  vertices {
+    x: 240
+    y: 224
+  }
+}
+, description: "2"
+bounding_poly {
+  vertices {
+    x: 104
+    y: 224
+  }
+  vertices {
+    x: 117
+    y: 224
+  }
+  vertices {
+    x: 117
+    y: 233
+  }
+  vertices {
+    x: 104
+    y: 233
+  }
+}
+, description: "1."
+bounding_poly {
+  vertices {
+    x: 300
+    y: 232
+  }
+  vertices {
+    x: 320
+    y: 232
+  }
+  vertices {
+    x: 320
+    y: 242
+  }
+  vertices {
+    x: 300
+    y: 242
+  }
+}
+, description: "Llenar"
+bounding_poly {
+  vertices {
+    x: 324
+    y: 232
+  }
+  vertices {
+    x: 348
+    y: 232
+  }
+  vertices {
+    x: 348
+    y: 242
+  }
+  vertices {
+    x: 324
+    y: 242
+  }
+}
+, description: "de"
+bounding_poly {
+  vertices {
+    x: 354
+    y: 232
+  }
+  vertices {
+    x: 361
+    y: 232
+  }
+  vertices {
+    x: 361
+    y: 242
+  }
+  vertices {
+    x: 354
+    y: 242
+  }
+}
+, description: "charcos"
+bounding_poly {
+  vertices {
+    x: 367
+    y: 232
+  }
+  vertices {
+    x: 395
+    y: 232
+  }
+  vertices {
+    x: 395
+    y: 242
+  }
+  vertices {
+    x: 367
+    y: 242
+  }
+}
+, description: "6."
+bounding_poly {
+  vertices {
+    x: 313
+    y: 245
+  }
+  vertices {
+    x: 321
+    y: 245
+  }
+  vertices {
+    x: 321
+    y: 251
+  }
+  vertices {
+    x: 313
+    y: 251
+  }
+}
+, description: "Abulia,"
+bounding_poly {
+  vertices {
+    x: 326
+    y: 245
+  }
+  vertices {
+    x: 349
+    y: 245
+  }
+  vertices {
+    x: 349
+    y: 252
+  }
+  vertices {
+    x: 326
+    y: 252
+  }
+}
+, description: "abandono"
+bounding_poly {
+  vertices {
+    x: 354
+    y: 246
+  }
+  vertices {
+    x: 392
+    y: 246
+  }
+  vertices {
+    x: 392
+    y: 252
+  }
+  vertices {
+    x: 354
+    y: 252
+  }
+}
+, description: "8"
+bounding_poly {
+  vertices {
+    x: 266
+    y: 233
+  }
+  vertices {
+    x: 273
+    y: 233
+  }
+  vertices {
+    x: 273
+    y: 242
+  }
+  vertices {
+    x: 266
+    y: 242
+  }
+}
+, description: "0"
+bounding_poly {
+  vertices {
+    x: 313
+    y: 234
+  }
+  vertices {
+    x: 318
+    y: 234
+  }
+  vertices {
+    x: 318
+    y: 254
+  }
+  vertices {
+    x: 313
+    y: 254
+  }
+}
+, description: "11."
+bounding_poly {
+  vertices {
+    x: 308
+    y: 255
+  }
+  vertices {
+    x: 317
+    y: 255
+  }
+  vertices {
+    x: 317
+    y: 261
+  }
+  vertices {
+    x: 308
+    y: 261
+  }
+}
+, description: "Procedimiento"
+bounding_poly {
+  vertices {
+    x: 322
+    y: 255
+  }
+  vertices {
+    x: 379
+    y: 255
+  }
+  vertices {
+    x: 379
+    y: 262
+  }
+  vertices {
+    x: 322
+    y: 262
+  }
+}
+, description: "o"
+bounding_poly {
+  vertices {
+    x: 290
+    y: 266
+  }
+  vertices {
+    x: 293
+    y: 266
+  }
+  vertices {
+    x: 293
+    y: 275
+  }
+  vertices {
+    x: 290
+    y: 275
+  }
+}
+, description: "radioel\303\251ctrico"
+bounding_poly {
+  vertices {
+    x: 307
+    y: 266
+  }
+  vertices {
+    x: 373
+    y: 266
+  }
+  vertices {
+    x: 373
+    y: 275
+  }
+  vertices {
+    x: 307
+    y: 275
+  }
+}
+, description: "que"
+bounding_poly {
+  vertices {
+    x: 378
+    y: 266
+  }
+  vertices {
+    x: 390
+    y: 266
+  }
+  vertices {
+    x: 390
+    y: 275
+  }
+  vertices {
+    x: 378
+    y: 275
+  }
+}
+, description: "permite"
+bounding_poly {
+  vertices {
+    x: 321
+    y: 278
+  }
+  vertices {
+    x: 349
+    y: 278
+  }
+  vertices {
+    x: 349
+    y: 285
+  }
+  vertices {
+    x: 321
+    y: 285
+  }
+}
+, description: "a"
+bounding_poly {
+  vertices {
+    x: 354
+    y: 279
+  }
+  vertices {
+    x: 357
+    y: 279
+  }
+  vertices {
+    x: 357
+    y: 284
+  }
+  vertices {
+    x: 354
+    y: 284
+  }
+}
+, description: "un"
+bounding_poly {
+  vertices {
+    x: 362
+    y: 279
+  }
+  vertices {
+    x: 370
+    y: 279
+  }
+  vertices {
+    x: 370
+    y: 284
+  }
+  vertices {
+    x: 362
+    y: 284
+  }
+}
+, description: "barco"
+bounding_poly {
+  vertices {
+    x: 374
+    y: 278
+  }
+  vertices {
+    x: 395
+    y: 278
+  }
+  vertices {
+    x: 395
+    y: 284
+  }
+  vertices {
+    x: 374
+    y: 284
+  }
+}
+, description: "determinar"
+bounding_poly {
+  vertices {
+    x: 320
+    y: 288
+  }
+  vertices {
+    x: 361
+    y: 288
+  }
+  vertices {
+    x: 361
+    y: 294
+  }
+  vertices {
+    x: 320
+    y: 294
+  }
+}
+, description: "su"
+bounding_poly {
+  vertices {
+    x: 366
+    y: 290
+  }
+  vertices {
+    x: 374
+    y: 290
+  }
+  vertices {
+    x: 374
+    y: 295
+  }
+  vertices {
+    x: 366
+    y: 295
+  }
+}
+]

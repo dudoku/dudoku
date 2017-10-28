@@ -1,0 +1,550 @@
+[locale: "en"
+description: "Fill in the blak spaces in the grid so that every vertical column, every horizontal row\nwithout repeating any.\n9 35\n7 35\n84 3\n5\n"
+bounding_poly {
+  vertices {
+    x: 5
+  }
+  vertices {
+    x: 408
+  }
+  vertices {
+    x: 408
+    y: 366
+  }
+  vertices {
+    x: 5
+    y: 366
+  }
+}
+, description: "Fill"
+bounding_poly {
+  vertices {
+    x: 387
+    y: 47
+  }
+  vertices {
+    x: 388
+    y: 56
+  }
+  vertices {
+    x: 383
+    y: 56
+  }
+  vertices {
+    x: 382
+    y: 47
+  }
+}
+, description: "in"
+bounding_poly {
+  vertices {
+    x: 386
+    y: 58
+  }
+  vertices {
+    x: 386
+    y: 64
+  }
+  vertices {
+    x: 383
+    y: 64
+  }
+  vertices {
+    x: 383
+    y: 58
+  }
+}
+, description: "the"
+bounding_poly {
+  vertices {
+    x: 387
+    y: 66
+  }
+  vertices {
+    x: 388
+    y: 77
+  }
+  vertices {
+    x: 384
+    y: 77
+  }
+  vertices {
+    x: 383
+    y: 66
+  }
+}
+, description: "blak"
+bounding_poly {
+  vertices {
+    x: 388
+    y: 79
+  }
+  vertices {
+    x: 389
+    y: 98
+  }
+  vertices {
+    x: 385
+    y: 98
+  }
+  vertices {
+    x: 384
+    y: 79
+  }
+}
+, description: "spaces"
+bounding_poly {
+  vertices {
+    x: 389
+    y: 100
+  }
+  vertices {
+    x: 391
+    y: 124
+  }
+  vertices {
+    x: 386
+    y: 124
+  }
+  vertices {
+    x: 384
+    y: 100
+  }
+}
+, description: "in"
+bounding_poly {
+  vertices {
+    x: 392
+    y: 127
+  }
+  vertices {
+    x: 392
+    y: 133
+  }
+  vertices {
+    x: 388
+    y: 133
+  }
+  vertices {
+    x: 388
+    y: 127
+  }
+}
+, description: "the"
+bounding_poly {
+  vertices {
+    x: 392
+    y: 136
+  }
+  vertices {
+    x: 393
+    y: 147
+  }
+  vertices {
+    x: 389
+    y: 147
+  }
+  vertices {
+    x: 388
+    y: 136
+  }
+}
+, description: "grid"
+bounding_poly {
+  vertices {
+    x: 393
+    y: 150
+  }
+  vertices {
+    x: 394
+    y: 163
+  }
+  vertices {
+    x: 388
+    y: 163
+  }
+  vertices {
+    x: 387
+    y: 150
+  }
+}
+, description: "so"
+bounding_poly {
+  vertices {
+    x: 393
+    y: 166
+  }
+  vertices {
+    x: 394
+    y: 174
+  }
+  vertices {
+    x: 390
+    y: 174
+  }
+  vertices {
+    x: 389
+    y: 166
+  }
+}
+, description: "that"
+bounding_poly {
+  vertices {
+    x: 395
+    y: 177
+  }
+  vertices {
+    x: 396
+    y: 191
+  }
+  vertices {
+    x: 391
+    y: 191
+  }
+  vertices {
+    x: 390
+    y: 177
+  }
+}
+, description: "every"
+bounding_poly {
+  vertices {
+    x: 395
+    y: 194
+  }
+  vertices {
+    x: 396
+    y: 214
+  }
+  vertices {
+    x: 391
+    y: 214
+  }
+  vertices {
+    x: 390
+    y: 194
+  }
+}
+, description: "vertical"
+bounding_poly {
+  vertices {
+    x: 399
+    y: 217
+  }
+  vertices {
+    x: 401
+    y: 245
+  }
+  vertices {
+    x: 395
+    y: 245
+  }
+  vertices {
+    x: 393
+    y: 217
+  }
+}
+, description: "column"
+bounding_poly {
+  vertices {
+    x: 401
+    y: 247
+  }
+  vertices {
+    x: 403
+    y: 274
+  }
+  vertices {
+    x: 397
+    y: 274
+  }
+  vertices {
+    x: 395
+    y: 247
+  }
+}
+, description: ","
+bounding_poly {
+  vertices {
+    x: 401
+    y: 275
+  }
+  vertices {
+    x: 401
+    y: 278
+  }
+  vertices {
+    x: 397
+    y: 278
+  }
+  vertices {
+    x: 397
+    y: 275
+  }
+}
+, description: "every"
+bounding_poly {
+  vertices {
+    x: 402
+    y: 281
+  }
+  vertices {
+    x: 404
+    y: 303
+  }
+  vertices {
+    x: 399
+    y: 303
+  }
+  vertices {
+    x: 397
+    y: 281
+  }
+}
+, description: "horizontal"
+bounding_poly {
+  vertices {
+    x: 405
+    y: 306
+  }
+  vertices {
+    x: 408
+    y: 347
+  }
+  vertices {
+    x: 402
+    y: 347
+  }
+  vertices {
+    x: 399
+    y: 306
+  }
+}
+, description: "row"
+bounding_poly {
+  vertices {
+    x: 407
+    y: 350
+  }
+  vertices {
+    x: 408
+    y: 366
+  }
+  vertices {
+    x: 404
+    y: 366
+  }
+  vertices {
+    x: 403
+    y: 350
+  }
+}
+, description: "without"
+bounding_poly {
+  vertices {
+    x: 391
+    y: 246
+  }
+  vertices {
+    x: 393
+    y: 275
+  }
+  vertices {
+    x: 387
+    y: 275
+  }
+  vertices {
+    x: 385
+    y: 246
+  }
+}
+, description: "repeating"
+bounding_poly {
+  vertices {
+    x: 393
+    y: 278
+  }
+  vertices {
+    x: 395
+    y: 316
+  }
+  vertices {
+    x: 388
+    y: 316
+  }
+  vertices {
+    x: 386
+    y: 278
+  }
+}
+, description: "any"
+bounding_poly {
+  vertices {
+    x: 394
+    y: 319
+  }
+  vertices {
+    x: 395
+    y: 331
+  }
+  vertices {
+    x: 390
+    y: 331
+  }
+  vertices {
+    x: 389
+    y: 319
+  }
+}
+, description: "."
+bounding_poly {
+  vertices {
+    x: 394
+    y: 332
+  }
+  vertices {
+    x: 394
+    y: 334
+  }
+  vertices {
+    x: 389
+    y: 334
+  }
+  vertices {
+    x: 389
+    y: 332
+  }
+}
+, description: "9"
+bounding_poly {
+  vertices {
+    x: 359
+    y: 93
+  }
+  vertices {
+    x: 360
+    y: 115
+  }
+  vertices {
+    x: 346
+    y: 116
+  }
+  vertices {
+    x: 345
+    y: 94
+  }
+}
+, description: "35"
+bounding_poly {
+  vertices {
+    x: 363
+    y: 153
+  }
+  vertices {
+    x: 366
+    y: 223
+  }
+  vertices {
+    x: 351
+    y: 224
+  }
+  vertices {
+    x: 348
+    y: 154
+  }
+}
+, description: "7"
+bounding_poly {
+  vertices {
+    x: 104
+    y: 167
+  }
+  vertices {
+    x: 103
+    y: 189
+  }
+  vertices {
+    x: 88
+    y: 188
+  }
+  vertices {
+    x: 89
+    y: 166
+  }
+}
+, description: "35"
+bounding_poly {
+  vertices {
+    x: 101
+    y: 239
+  }
+  vertices {
+    x: 98
+    y: 302
+  }
+  vertices {
+    x: 81
+    y: 301
+  }
+  vertices {
+    x: 84
+    y: 238
+  }
+}
+, description: "84"
+bounding_poly {
+  vertices {
+    x: 68
+    y: 202
+  }
+  vertices {
+    x: 62
+    y: 270
+  }
+  vertices {
+    x: 46
+    y: 268
+  }
+  vertices {
+    x: 52
+    y: 201
+  }
+}
+, description: "3"
+bounding_poly {
+  vertices {
+    x: 59
+    y: 305
+  }
+  vertices {
+    x: 56
+    y: 340
+  }
+  vertices {
+    x: 40
+    y: 338
+  }
+  vertices {
+    x: 43
+    y: 304
+  }
+}
+, description: "5"
+bounding_poly {
+  vertices {
+    x: 11
+    y: 35
+  }
+  vertices {
+    x: 5
+    y: 2
+  }
+  vertices {
+    x: 14
+  }
+  vertices {
+    x: 20
+    y: 33
+  }
+}
+]
