@@ -317,9 +317,16 @@ def runDudoku():
                     y = findSpacesBetweenVert(smallestYEntry[1], smallestXEntry[1]) + 1
                     grid[x][y] = sortedSquares[i][0]
 
+
+
+            fout = open("solved" + 0 + ".txt", "w")
+            f.write(minGridDimen)
+            f.write(" ")
             print(minGridDimen)
             for x in range(minGridDimen):
                 for y in range(minGridDimen):
+                    f.write(grid[x][y])
+                    f.write(" ")
                     print(x, y, grid[x][y])
     else:
         print("Takes in a single file as input.")
