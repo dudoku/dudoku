@@ -1,8 +1,10 @@
+
 def run_quickstart():
     # [START vision_quickstart]
     import io
     import os
     import sys
+    import pickle
 
     # Imports the Google Cloud client library
     # [START migration_import]
@@ -21,9 +23,10 @@ def run_quickstart():
 
     image = types.Image(content=content)
 
-    response = client.text_detection(image=image)
+    response = client.text_detection(image=image).text_annotations
+    print(response)
 
-    print('response:', response)
+    #print(json.dumps(response))
     # [END vision_quickstart]
 
 

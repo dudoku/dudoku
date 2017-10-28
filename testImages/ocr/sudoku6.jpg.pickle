@@ -1,0 +1,971 @@
+[locale: "en"
+description: "Now that you\'re done with your meal\nrelax and enjoy a Sudoku puzzle.\n6\n8\n3 4\n\347\266\264\350\225\212\n\350\227\277\347\271\274\n4 6 2\n2\n3\n2\n2 8\n3\n2\now, column, and mini-grid must contain the numbers\n9 and only be used once per row, column and mini-grid.\n"
+bounding_poly {
+  vertices {
+    x: 344
+    y: 78
+  }
+  vertices {
+    x: 1587
+    y: 78
+  }
+  vertices {
+    x: 1587
+    y: 1180
+  }
+  vertices {
+    x: 344
+    y: 1180
+  }
+}
+, description: "Now"
+bounding_poly {
+  vertices {
+    x: 401
+    y: 78
+  }
+  vertices {
+    x: 498
+    y: 80
+  }
+  vertices {
+    x: 497
+    y: 117
+  }
+  vertices {
+    x: 400
+    y: 115
+  }
+}
+, description: "that"
+bounding_poly {
+  vertices {
+    x: 511
+    y: 79
+  }
+  vertices {
+    x: 603
+    y: 81
+  }
+  vertices {
+    x: 602
+    y: 120
+  }
+  vertices {
+    x: 510
+    y: 118
+  }
+}
+, description: "you\'re"
+bounding_poly {
+  vertices {
+    x: 614
+    y: 82
+  }
+  vertices {
+    x: 750
+    y: 84
+  }
+  vertices {
+    x: 749
+    y: 132
+  }
+  vertices {
+    x: 613
+    y: 130
+  }
+}
+, description: "done"
+bounding_poly {
+  vertices {
+    x: 763
+    y: 83
+  }
+  vertices {
+    x: 872
+    y: 85
+  }
+  vertices {
+    x: 871
+    y: 125
+  }
+  vertices {
+    x: 762
+    y: 123
+  }
+}
+, description: "with"
+bounding_poly {
+  vertices {
+    x: 885
+    y: 85
+  }
+  vertices {
+    x: 980
+    y: 87
+  }
+  vertices {
+    x: 979
+    y: 126
+  }
+  vertices {
+    x: 884
+    y: 124
+  }
+}
+, description: "your"
+bounding_poly {
+  vertices {
+    x: 991
+    y: 101
+  }
+  vertices {
+    x: 1089
+    y: 103
+  }
+  vertices {
+    x: 1088
+    y: 137
+  }
+  vertices {
+    x: 990
+    y: 135
+  }
+}
+, description: "meal"
+bounding_poly {
+  vertices {
+    x: 1104
+    y: 89
+  }
+  vertices {
+    x: 1207
+    y: 91
+  }
+  vertices {
+    x: 1206
+    y: 130
+  }
+  vertices {
+    x: 1103
+    y: 128
+  }
+}
+, description: "relax"
+bounding_poly {
+  vertices {
+    x: 447
+    y: 130
+  }
+  vertices {
+    x: 555
+    y: 132
+  }
+  vertices {
+    x: 554
+    y: 171
+  }
+  vertices {
+    x: 446
+    y: 169
+  }
+}
+, description: "and"
+bounding_poly {
+  vertices {
+    x: 569
+    y: 132
+  }
+  vertices {
+    x: 650
+    y: 134
+  }
+  vertices {
+    x: 649
+    y: 173
+  }
+  vertices {
+    x: 568
+    y: 171
+  }
+}
+, description: "enjoy"
+bounding_poly {
+  vertices {
+    x: 663
+    y: 149
+  }
+  vertices {
+    x: 782
+    y: 151
+  }
+  vertices {
+    x: 781
+    y: 186
+  }
+  vertices {
+    x: 662
+    y: 184
+  }
+}
+, description: "a"
+bounding_poly {
+  vertices {
+    x: 795
+    y: 151
+  }
+  vertices {
+    x: 818
+    y: 151
+  }
+  vertices {
+    x: 818
+    y: 175
+  }
+  vertices {
+    x: 795
+    y: 175
+  }
+}
+, description: "Sudoku"
+bounding_poly {
+  vertices {
+    x: 831
+    y: 137
+  }
+  vertices {
+    x: 994
+    y: 140
+  }
+  vertices {
+    x: 993
+    y: 180
+  }
+  vertices {
+    x: 830
+    y: 177
+  }
+}
+, description: "puzzle."
+bounding_poly {
+  vertices {
+    x: 1008
+    y: 140
+  }
+  vertices {
+    x: 1160
+    y: 143
+  }
+  vertices {
+    x: 1159
+    y: 191
+  }
+  vertices {
+    x: 1007
+    y: 188
+  }
+}
+, description: "6"
+bounding_poly {
+  vertices {
+    x: 429
+    y: 313
+  }
+  vertices {
+    x: 455
+    y: 312
+  }
+  vertices {
+    x: 457
+    y: 352
+  }
+  vertices {
+    x: 431
+    y: 353
+  }
+}
+, description: "8"
+bounding_poly {
+  vertices {
+    x: 701
+    y: 317
+  }
+  vertices {
+    x: 719
+    y: 317
+  }
+  vertices {
+    x: 719
+    y: 357
+  }
+  vertices {
+    x: 701
+    y: 357
+  }
+}
+, description: "3"
+bounding_poly {
+  vertices {
+    x: 1035
+    y: 324
+  }
+  vertices {
+    x: 1082
+    y: 324
+  }
+  vertices {
+    x: 1082
+    y: 372
+  }
+  vertices {
+    x: 1035
+    y: 372
+  }
+}
+, description: "4"
+bounding_poly {
+  vertices {
+    x: 1126
+    y: 324
+  }
+  vertices {
+    x: 1173
+    y: 324
+  }
+  vertices {
+    x: 1173
+    y: 372
+  }
+  vertices {
+    x: 1126
+    y: 372
+  }
+}
+, description: "\347\266\264"
+bounding_poly {
+  vertices {
+    x: 1477
+    y: 326
+  }
+  vertices {
+    x: 1497
+    y: 328
+  }
+  vertices {
+    x: 1495
+    y: 351
+  }
+  vertices {
+    x: 1475
+    y: 349
+  }
+}
+, description: "\350\225\212"
+bounding_poly {
+  vertices {
+    x: 1519
+    y: 328
+  }
+  vertices {
+    x: 1542
+    y: 330
+  }
+  vertices {
+    x: 1540
+    y: 353
+  }
+  vertices {
+    x: 1517
+    y: 351
+  }
+}
+, description: "\350\227\277"
+bounding_poly {
+  vertices {
+    x: 1521
+    y: 457
+  }
+  vertices {
+    x: 1544
+    y: 459
+  }
+  vertices {
+    x: 1542
+    y: 482
+  }
+  vertices {
+    x: 1519
+    y: 480
+  }
+}
+, description: "\347\271\274"
+bounding_poly {
+  vertices {
+    x: 1564
+    y: 458
+  }
+  vertices {
+    x: 1587
+    y: 460
+  }
+  vertices {
+    x: 1585
+    y: 484
+  }
+  vertices {
+    x: 1562
+    y: 482
+  }
+}
+, description: "4"
+bounding_poly {
+  vertices {
+    x: 421
+    y: 492
+  }
+  vertices {
+    x: 442
+    y: 492
+  }
+  vertices {
+    x: 442
+    y: 538
+  }
+  vertices {
+    x: 421
+    y: 538
+  }
+}
+, description: "6"
+bounding_poly {
+  vertices {
+    x: 484
+    y: 492
+  }
+  vertices {
+    x: 538
+    y: 492
+  }
+  vertices {
+    x: 538
+    y: 538
+  }
+  vertices {
+    x: 484
+    y: 538
+  }
+}
+, description: "2"
+bounding_poly {
+  vertices {
+    x: 580
+    y: 493
+  }
+  vertices {
+    x: 627
+    y: 493
+  }
+  vertices {
+    x: 627
+    y: 539
+  }
+  vertices {
+    x: 580
+    y: 539
+  }
+}
+, description: "2"
+bounding_poly {
+  vertices {
+    x: 1059
+    y: 595
+  }
+  vertices {
+    x: 1084
+    y: 594
+  }
+  vertices {
+    x: 1086
+    y: 630
+  }
+  vertices {
+    x: 1061
+    y: 631
+  }
+}
+, description: "3"
+bounding_poly {
+  vertices {
+    x: 603
+    y: 681
+  }
+  vertices {
+    x: 629
+    y: 681
+  }
+  vertices {
+    x: 629
+    y: 723
+  }
+  vertices {
+    x: 603
+    y: 723
+  }
+}
+, description: "2"
+bounding_poly {
+  vertices {
+    x: 1153
+    y: 779
+  }
+  vertices {
+    x: 1177
+    y: 778
+  }
+  vertices {
+    x: 1179
+    y: 815
+  }
+  vertices {
+    x: 1155
+    y: 816
+  }
+}
+, description: "2"
+bounding_poly {
+  vertices {
+    x: 410
+    y: 860
+  }
+  vertices {
+    x: 428
+    y: 860
+  }
+  vertices {
+    x: 428
+    y: 901
+  }
+  vertices {
+    x: 410
+    y: 901
+  }
+}
+, description: "8"
+bounding_poly {
+  vertices {
+    x: 473
+    y: 860
+  }
+  vertices {
+    x: 521
+    y: 860
+  }
+  vertices {
+    x: 521
+    y: 901
+  }
+  vertices {
+    x: 473
+    y: 901
+  }
+}
+, description: "3"
+bounding_poly {
+  vertices {
+    x: 1152
+    y: 874
+  }
+  vertices {
+    x: 1181
+    y: 873
+  }
+  vertices {
+    x: 1183
+    y: 919
+  }
+  vertices {
+    x: 1154
+    y: 920
+  }
+}
+, description: "2"
+bounding_poly {
+  vertices {
+    x: 876
+    y: 962
+  }
+  vertices {
+    x: 904
+    y: 963
+  }
+  vertices {
+    x: 902
+    y: 999
+  }
+  vertices {
+    x: 874
+    y: 998
+  }
+}
+, description: "ow,"
+bounding_poly {
+  vertices {
+    x: 348
+    y: 1075
+  }
+  vertices {
+    x: 410
+    y: 1076
+  }
+  vertices {
+    x: 410
+    y: 1100
+  }
+  vertices {
+    x: 348
+    y: 1099
+  }
+}
+, description: "column,"
+bounding_poly {
+  vertices {
+    x: 425
+    y: 1067
+  }
+  vertices {
+    x: 578
+    y: 1069
+  }
+  vertices {
+    x: 578
+    y: 1102
+  }
+  vertices {
+    x: 425
+    y: 1100
+  }
+}
+, description: "and"
+bounding_poly {
+  vertices {
+    x: 591
+    y: 1062
+  }
+  vertices {
+    x: 662
+    y: 1063
+  }
+  vertices {
+    x: 662
+    y: 1100
+  }
+  vertices {
+    x: 591
+    y: 1099
+  }
+}
+, description: "mini-grid"
+bounding_poly {
+  vertices {
+    x: 675
+    y: 1064
+  }
+  vertices {
+    x: 846
+    y: 1066
+  }
+  vertices {
+    x: 845
+    y: 1111
+  }
+  vertices {
+    x: 675
+    y: 1109
+  }
+}
+, description: "must"
+bounding_poly {
+  vertices {
+    x: 860
+    y: 1078
+  }
+  vertices {
+    x: 955
+    y: 1079
+  }
+  vertices {
+    x: 955
+    y: 1103
+  }
+  vertices {
+    x: 860
+    y: 1102
+  }
+}
+, description: "contain"
+bounding_poly {
+  vertices {
+    x: 968
+    y: 1071
+  }
+  vertices {
+    x: 1112
+    y: 1073
+  }
+  vertices {
+    x: 1112
+    y: 1105
+  }
+  vertices {
+    x: 968
+    y: 1103
+  }
+}
+, description: "the"
+bounding_poly {
+  vertices {
+    x: 1126
+    y: 1068
+  }
+  vertices {
+    x: 1189
+    y: 1069
+  }
+  vertices {
+    x: 1189
+    y: 1105
+  }
+  vertices {
+    x: 1126
+    y: 1104
+  }
+}
+, description: "numbers"
+bounding_poly {
+  vertices {
+    x: 1203
+    y: 1069
+  }
+  vertices {
+    x: 1372
+    y: 1071
+  }
+  vertices {
+    x: 1372
+    y: 1108
+  }
+  vertices {
+    x: 1203
+    y: 1106
+  }
+}
+, description: "9"
+bounding_poly {
+  vertices {
+    x: 344
+    y: 1108
+  }
+  vertices {
+    x: 363
+    y: 1108
+  }
+  vertices {
+    x: 363
+    y: 1173
+  }
+  vertices {
+    x: 344
+    y: 1173
+  }
+}
+, description: "and"
+bounding_poly {
+  vertices {
+    x: 377
+    y: 1108
+  }
+  vertices {
+    x: 441
+    y: 1108
+  }
+  vertices {
+    x: 441
+    y: 1173
+  }
+  vertices {
+    x: 377
+    y: 1173
+  }
+}
+, description: "only"
+bounding_poly {
+  vertices {
+    x: 464
+    y: 1109
+  }
+  vertices {
+    x: 540
+    y: 1109
+  }
+  vertices {
+    x: 540
+    y: 1174
+  }
+  vertices {
+    x: 464
+    y: 1174
+  }
+}
+, description: "be"
+bounding_poly {
+  vertices {
+    x: 564
+    y: 1109
+  }
+  vertices {
+    x: 606
+    y: 1109
+  }
+  vertices {
+    x: 606
+    y: 1174
+  }
+  vertices {
+    x: 564
+    y: 1174
+  }
+}
+, description: "used"
+bounding_poly {
+  vertices {
+    x: 618
+    y: 1110
+  }
+  vertices {
+    x: 706
+    y: 1111
+  }
+  vertices {
+    x: 706
+    y: 1176
+  }
+  vertices {
+    x: 618
+    y: 1175
+  }
+}
+, description: "once"
+bounding_poly {
+  vertices {
+    x: 729
+    y: 1110
+  }
+  vertices {
+    x: 815
+    y: 1111
+  }
+  vertices {
+    x: 815
+    y: 1176
+  }
+  vertices {
+    x: 729
+    y: 1175
+  }
+}
+, description: "per"
+bounding_poly {
+  vertices {
+    x: 840
+    y: 1111
+  }
+  vertices {
+    x: 893
+    y: 1111
+  }
+  vertices {
+    x: 893
+    y: 1176
+  }
+  vertices {
+    x: 840
+    y: 1176
+  }
+}
+, description: "row,"
+bounding_poly {
+  vertices {
+    x: 916
+    y: 1111
+  }
+  vertices {
+    x: 992
+    y: 1111
+  }
+  vertices {
+    x: 992
+    y: 1176
+  }
+  vertices {
+    x: 916
+    y: 1176
+  }
+}
+, description: "column"
+bounding_poly {
+  vertices {
+    x: 1006
+    y: 1112
+  }
+  vertices {
+    x: 1146
+    y: 1113
+  }
+  vertices {
+    x: 1146
+    y: 1178
+  }
+  vertices {
+    x: 1006
+    y: 1177
+  }
+}
+, description: "and"
+bounding_poly {
+  vertices {
+    x: 1160
+    y: 1113
+  }
+  vertices {
+    x: 1224
+    y: 1113
+  }
+  vertices {
+    x: 1224
+    y: 1178
+  }
+  vertices {
+    x: 1160
+    y: 1178
+  }
+}
+, description: "mini-grid."
+bounding_poly {
+  vertices {
+    x: 1247
+    y: 1114
+  }
+  vertices {
+    x: 1434
+    y: 1115
+  }
+  vertices {
+    x: 1434
+    y: 1180
+  }
+  vertices {
+    x: 1247
+    y: 1179
+  }
+}
+]

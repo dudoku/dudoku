@@ -1,0 +1,97 @@
+[locale: "en"
+description: "3\n2\n4\n4\n"
+bounding_poly {
+  vertices {
+    x: 20
+    y: 18
+  }
+  vertices {
+    x: 200
+    y: 18
+  }
+  vertices {
+    x: 200
+    y: 207
+  }
+  vertices {
+    x: 20
+    y: 207
+  }
+}
+, description: "3"
+bounding_poly {
+  vertices {
+    x: 184
+    y: 154
+  }
+  vertices {
+    x: 184
+    y: 130
+  }
+  vertices {
+    x: 200
+    y: 130
+  }
+  vertices {
+    x: 200
+    y: 154
+  }
+}
+, description: "2"
+bounding_poly {
+  vertices {
+    x: 130
+    y: 98
+  }
+  vertices {
+    x: 130
+    y: 18
+  }
+  vertices {
+    x: 141
+    y: 18
+  }
+  vertices {
+    x: 141
+    y: 98
+  }
+}
+, description: "4"
+bounding_poly {
+  vertices {
+    x: 69
+    y: 207
+  }
+  vertices {
+    x: 73
+    y: 126
+  }
+  vertices {
+    x: 84
+    y: 127
+  }
+  vertices {
+    x: 80
+    y: 207
+  }
+}
+, description: "4"
+bounding_poly {
+  vertices {
+    x: 20
+    y: 97
+  }
+  vertices {
+    x: 20
+    y: 72
+  }
+  vertices {
+    x: 33
+    y: 72
+  }
+  vertices {
+    x: 33
+    y: 97
+  }
+}
+]
