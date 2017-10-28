@@ -31,10 +31,11 @@ RUN pip install -U crcmod && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
-RUN python -m pip install --upgrade google-cloud
+RUN python -m pip install --upgrade google-cloud google-cloud-vision
 
+RUN echo "export GOOGLE_APPLICATION_CREDENTIALS=key.json" >> ~/.bashrc
 
-COPY . "/app"
+VOLUME ["/app"]
 
 WORKDIR "/app"
 
