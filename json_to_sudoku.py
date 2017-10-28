@@ -106,6 +106,7 @@ def runDudoku():
                 print(i)
                 print(annotations.__getitem__(i).description)
                 vertices = annotations.__getitem__(i).bounding_poly.vertices
+                print(annotations.__getitem__(i).description, vertices[0].x, vertices[0].y, vertices[1].x, vertices[1].y)
                 col = Collider(vertices[0].x, vertices[0].y, vertices[1].x, vertices[1].y)
                 littleSquares.append((annotations.__getitem__(i).description, col))
 
