@@ -6,20 +6,30 @@ from PIL import Image, ImageDraw
 class Collider(object):
 
     def __init__(self, x1, y1, x2, y2):
-        self.HALF_AVG_SIZE = ((x2 - x1) + (y2 - y1)) / 2
         self.xMid = (x2 - x1) / 2 + x1
         self.yMid = (y2 - y1) / 2 + y1
 
-        self.x1 = self.xMid - self.HALF_AVG_SIZE
-        self.x2 = self.xMid + self.HALF_AVG_SIZE
-        self.y1 = self.yMid - self.HALF_AVG_SIZE
-        self.y2 = self.yMid + self.HALF_AVG_SIZE
-        print('collider', x1, y1, x2, y2, ',', self.HALF_AVG_SIZE, self.xMid, self.yMid, ',', self.x1, self.x2, self.y1, self.y2)
+        self.x1 = x1
+        self.x2 = x2
+        self.y1 = y1
+        self.y2 = y2
+        print('collider', x1, y1, x2, y2, ',', self.xMid, self.yMid, ',', self.x1, self.x2, self.y1, self.y2)
 
     def checkCollision(self, col):
         xCol = (self.x1 >= col.x1 and self.x1 <= col.x2) or (self.x2 >= col.x1 and self.x2 <= col.x2)
         yCol = (self.y1 >= col.y1 and self.y1 <= col.y2) or (self.y2 >= col.y1 and self.y2 <= col.y2)
         return xCol and yCol
+
+    def resize(self):
+        self.HALF_AVG_SIZE = ((self.x2 - self.x1) + (self.y2 - self.y1)) / 2
+        self.xMid = (self.x2 - self.x1) / 2 + self.x1
+        self.yMid = (self.y2 - self.y1) / 2 + self.y1
+
+        self.x1 = self.xMid - self.HALF_AVG_SIZE
+        self.x2 = self.xMid + self.HALF_AVG_SIZE
+        self.y1 = self.yMid - self.HALF_AVG_SIZE
+        self.y2 = self.yMid + self.HALF_AVG_SIZE
+
 
 def doOCR(content):
     # Imports the Google Cloud client library
@@ -84,6 +94,18 @@ def findSpacesBetweenVert(col1, col2):
         spaces += 1
     return spaces
 
+def drawBounds2(image_file, vects):
+    im = Image.open(image_file)
+
+    draw = ImageDraw.Draw(im)
+
+    draw.polygon([
+        vects[1].x1, vects[1].y1,
+        vects[1].x2, vects[1].y2,
+        ], None, 'purple')
+
+    im.save('./debug.jpg', 'JPEG')
+
 def drawBounds(image_file, vects):
     im = Image.open(image_file)
 
@@ -125,9 +147,9 @@ def runDudoku():
                 if ("\n" in annotations.__getitem__(i).description):
                     continue
                 vertices = annotations.__getitem__(i).bounding_poly.vertices
-                print(annotations.__getitem__(i).description, vertices[0].x, vertices[0].y, vertices[1].x, vertices[1].y)
+                print(annotations.__getitem__(i).description, vertices[0].x, vertices[0].y, vertices[2].x, vertices[2].y)
                 drawBounds('./debug.jpg', vertices)
-                col = Collider(vertices[0].x, vertices[0].y, vertices[1].x, vertices[1].y)
+                col = Collider(vertices[0].x, vertices[0].y, vertices[2].x, vertices[2].y)
                 littleSquares.append((annotations.__getitem__(i).description, col))
 
             # Test data to make sure it only considers the digits
@@ -148,13 +170,19 @@ def runDudoku():
                 if (len(littleSquares[i][0]) > 1):
                     strlen = len(littleSquares[i][0])
                     # If it is heading right
+                    print('wut?!',
+                          littleSquares[i][1].x2, littleSquares[i][1].x1, littleSquares[i][1].y2, littleSquares[i][1].y1, 'wut moar', littleSquares[i][1].x2 - littleSquares[i][1].x1, littleSquares[i][1].y2 - littleSquares[i][1].y1)
                     if (littleSquares[i][1].x2 - littleSquares[i][1].x1 > littleSquares[i][1].y2 - littleSquares[i][1].y1):
                         ySize = littleSquares[i][1].y2 - littleSquares[i][1].y1
-                        ySizePer = (1.0) * ySize / strlen
+                        ySizePer = ySize // strlen
+                        print('isit', littleSquares[i][1].y2, littleSquares[i][1].y1, ySize, strlen, ySizePer)
 
                         # Set the initial box then iterate to adjust the rest
                         for y in range(1, strlen):
                             # Set bounds and character
+
+                            print('THERE', ySize, strlen, ySizePer, littleSquares[i][1].y1)
+
                             col = Collider(littleSquares[i][1].x1, littleSquares[i][1].y1 + ySizePer * y + 1, littleSquares[i][1].x2, littleSquares[i][1].y1 + ySizePer * (y + 1) + 1)
                             appendToLittleSquares.append((littleSquares[i][0][y], col))
                         rmFromLittleSquares.append(littleSquares[i])
@@ -163,13 +191,14 @@ def runDudoku():
                     # If it is heading down
                     else:
                         xSize = littleSquares[i][1].x2 - littleSquares[i][1].x1
-                        xSizePer = (1.0) * xSize / strlen
+                        xSizePer = xSize // strlen
 
                         # Set the initial box then iterate to adjust the rest
                         littleSquares[i][1].x2 = littleSquares[i][1].x1 + xSizePer
                         for x in range(1, strlen):
                             # Set bounds and character
                             print('HERE', xSize, strlen, xSizePer, littleSquares[i][1].y1)
+
                             col = Collider(littleSquares[i][1].x1 + xSizePer * x + 1, littleSquares[i][1].y1, littleSquares[i][1].x1 + xSizePer * (x + 1) + 1, littleSquares[i][1].y2)
                             appendToLittleSquares.append((littleSquares[i][0][x], col))
                         rmFromLittleSquares.append(littleSquares[i])
@@ -178,8 +207,23 @@ def runDudoku():
                         appendToLittleSquares.append((littleSquares[i][0][0], col))
             for i in range(len(appendToLittleSquares)):
                 littleSquares.append(appendToLittleSquares[i])
+
             for i in range(len(rmFromLittleSquares)):
                 littleSquares.remove(rmFromLittleSquares[i])
+
+            for i in range(len(littleSquares)):
+                littleSquares[i][1].resize()
+
+                im = Image.open('./debug.jpg')
+
+                draw = ImageDraw.Draw(im)
+
+                draw.rectangle([
+                    littleSquares[i][1].x1, littleSquares[i][1].y1,
+                    littleSquares[i][1].x2, littleSquares[i][1].y2
+                ], 'brown')
+
+                im.save('./debug'+ str(i) +'.jpg', 'JPEG')
 
             # Sort the data by rows and then columns
             sortedSquares = []
@@ -199,6 +243,7 @@ def runDudoku():
             # All data thus far
             print("What survived the purge:")
             for i in range(len(sortedSquares)):
+                drawBounds2('./debug.jpg', sortedSquares[i])
                 print(sortedSquares[i])
 
             # Track smallest and largest entry in x and y
